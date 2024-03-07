@@ -1,0 +1,16 @@
+footer {
+    background-color: #333; /* Couleur de fond du footer */
+    color: #fff; /* Couleur du texte */
+    padding: 20px; /* Espacement intérieur */
+    text-align: center; /* Alignement du texte */
+  }
+  
+  footer a {
+    color: #fff; /* Couleur des liens dans le footer */
+    text-decoration: none; /* Supprimer le soulignement des liens */
+    margin: 0 10px; /* Marge entre les liens */
+  }
+  
+  footer a:hover {
+    text-decoration: underline; /* Souligner les liens au survol */
+  }

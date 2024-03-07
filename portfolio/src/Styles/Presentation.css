@@ -1,0 +1,34 @@
+/* Presentation.css */
+
+.presentation-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  justify-content: center; /* Centrer verticalement le contenu */
+  align-items: center; /* Centrer horizontalement le contenu */
+  padding: 20px; /* Ajouter un espace autour de la section */
+}
+
+.presentation-section {
+  width: 100%;
+  max-width: 800px; /* Limitez la largeur de la section pour une meilleure lisibilité */
+  margin: 0 auto; /* Centrez la section horizontalement */
+  padding: 40px; /* Augmenter l'espace à l'intérieur de la section */
+  background-color: rgba(255, 255, 255, 0.8); /* Ajoutez une couleur de fond semi-transparente pour améliorer la lisibilité du texte */
+  border-radius: 10px; /* Ajouter des coins arrondis */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Ajouter une ombre */
+}
+
+.presentation-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  background-image: url('./image_background.jpg'); /* Ajoutez le chemin d'accès correct vers votre image de fond */
+  background-size: cover;
+  background-position: center;
+}
