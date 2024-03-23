@@ -1,5 +1,4 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Presentation from './components/Presentation';
@@ -11,8 +10,8 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/presentation" element={<Presentation />} />
-          <Route path="/parcour" element={<Parcours />} />
+          <Route path="/" element={<Presentation />} /> {/* Route pour la page de présentation */}
+          <Route path="/parcour" element={<Parcours />} /> {/* Route pour la page de parcours */}
         </Routes>
         <Footer />
       </div>
@@ -21,5 +20,4 @@ function App() {
 }
 
 export default App;
-
 
