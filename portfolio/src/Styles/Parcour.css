@@ -1,0 +1,77 @@
+/* Parcours.css */
+
+/* Conteneur principal */
+.parcours-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0; /* Couleur de fond */
+  padding: 20px; /* Ajout de padding pour l'espace autour des éléments */
+  padding-bottom: 100px; /* Ajout de padding en bas pour éviter de chevaucher le footer */
+}
+
+/* Titre principal */
+.parcours-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333; /* Couleur du texte */
+}
+
+/* Section Expérience Professionnelle */
+.experience,
+.education {
+  width: 80%; /* Largeur de la section */
+  margin-bottom: 40px;
+}
+
+/* Logo */
+.logo {
+  width: 100px; /* Largeur des logos */
+  height: auto; /* Hauteur automatique pour maintenir les proportions */
+  margin-bottom: 10px; /* Espacement sous les logos */
+}
+
+/* Titres des sections */
+.experience h2,
+.education h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #007bff; /* Couleur du titre */
+}
+
+/* Contenu des sections */
+.job,
+.degree {
+  text-align: left; /* Alignement du texte à gauche */
+}
+
+/* Liste des compétences */
+.skills {
+  width: 80%; /* Largeur de la section */
+  margin-top: auto; /* Déplace la section vers le bas */
+  padding-top: 20px; /* Ajoute un espace au-dessus de la liste des compétences */
+  background-color: #fff; /* Couleur de fond */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.skills h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.skills-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-list li {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Icônes de compétences */
+.icon {
+  margin-right: 5px;
+  vertical-align: middle;
+}
