@@ -1,11 +1,10 @@
-// Project.jsx
 
 import React from 'react';
 import "../Styles/Project.css";
 
 function Project() {
   return (
-    <div className="project-container">
+    <div className="content">
       <div className="project">
         <div className="project-details">
           <h2>Projet E-commerce</h2>
@@ -32,3 +31,4 @@ function Project() {
 }
 
 export default Project;
+
