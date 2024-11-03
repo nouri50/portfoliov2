@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import "../components/Header";
+import "../components/Footer";
 
 function ContactPage() {
   // États pour gérer les champs du formulaire
