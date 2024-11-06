@@ -1,15 +1,24 @@
 import React from 'react';
-import '../Styles/Footer.css';
+import { FaGithub, FaLinkedin } from 'react-icons/fa'; // Assurez-vous de les utiliser si importés
+import "../Styles/Footer.css";
 
 function Footer() {
   return (
     <footer>
-      <a id="bouton" href="mailto:nourimorouche@sfr.fr">Me contacter</a>
-      <img src="appel-telephonique.png" alt="telephone" />
-      <a id="bouton" href="https://github.com/nouri50"><img src="image/github.png" alt="github" /></a>
-      <a id="bouton" href="https://www.flaticon.com/fr/icones-gratuites/linkedin" title="linkedin icônes">Linkedin icônes créées par Freepik - Flaticon</a>
+      <p className="rights">© 2024 Nouri Morouche. Tous droits réservés.</p>
+      <p>
+        <a href="/politique" className="icon">Politique de Confidentialité</a> |
+        <a href="https://github.com/ton-compte" target="_blank" rel="noopener noreferrer" className="icon">
+          <FaGithub /> GitHub
+        </a> |
+        <a href="https://linkedin.com/in/ton-compte" target="_blank" rel="noopener noreferrer" className="icon">
+          <FaLinkedin /> LinkedIn
+        </a> |
+        <a href="/contact" className="icon">Me contacter</a>
+      </p>
     </footer>
   );
 }
 
 export default Footer;
+
