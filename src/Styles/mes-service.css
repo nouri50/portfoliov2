@@ -1,0 +1,51 @@
+/* Container principal */
+.services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    gap: 40px;
+  }
+  
+  /* Titre principal */
+  .services-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #00bcd4; /* Couleur vibrante pour attirer l'œil dès l'arrivée */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Style des cartes de service */
+  .service-card {
+    width: 90%;
+    max-width: 800px;
+    padding: 40px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.6);  /* Fond sombre semi-transparent pour éviter trop de luminosité */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Titre des cartes de service */
+  .service-card h2 {
+    font-size: 2em;
+    color: #4fc3f7;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  /* Description des services */
+  .service-card p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #e0e0e0;
+    text-align: center;
+  }
+  

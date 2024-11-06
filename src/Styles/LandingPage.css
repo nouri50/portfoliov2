@@ -1,0 +1,113 @@
+/* Container principal de la page */
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 20px; /* Diminue le padding en haut */
+    gap: 30px; /* Réduit l'espacement entre les sections */
+    margin-top: -20px; /* Remonte légèrement le contenu vers le haut */
+}
+
+/* Titre principal de la page */
+.landing-title {
+    font-size: 2.3em; /* Taille ajustée pour un bon équilibre */
+    font-weight: bold;
+    color: #00bcd4; /* Couleur vibrante pour attirer l'attention */
+    margin-bottom: 15px; /* Réduit l'espacement en dessous du titre */
+    text-align: center;
+}
+
+/* Sous-titre sous le titre principal */
+.intro-subtitle {
+    font-size: 1.5em;
+    color: #e0e0e0;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px; /* Réduit l'espacement en dessous du sous-titre */
+    max-width: 800px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Style des sections individuelles */
+.section-card {
+    width: 90%;
+    max-width: 800px;
+    padding: 30px; /* Réduit le padding pour optimiser l'espace */
+    margin-bottom: 15px; /* Diminue l'espacement entre les cartes */
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.section-card:hover {
+    transform: translateY(-5px); /* Légère élévation au survol */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Titre des sections */
+.section-card h2 {
+    font-size: 2em;
+    color: #4fc3f7;
+    margin-bottom: 10px; /* Réduit l'espacement sous le titre de section */
+    text-align: center;
+}
+
+/* Description dans les sections */
+.section-card p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #e0e0e0;
+    text-align: center;
+    margin-bottom: 15px; /* Diminue l'espacement en dessous du texte */
+}
+
+/* Boutons d'action */
+.section-card a {
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    color: #ffffff;
+    background-color: #00bcd4;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.section-card a:hover {
+    background-color: #008ba3;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    width: 100%;
+    position: relative; /* Assure qu'il reste en bas sans chevaucher le contenu */
+}
+
+footer a {
+    color: #00bcd4;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #008ba3;
+}
+
+footer .icon {
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+footer .rights {
+    font-size: 0.8em;
+    margin-top: 5px;
+    display: block;
+}

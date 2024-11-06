@@ -1,31 +1,27 @@
 import React, { useState } from 'react';
-import "../components/Header";
-import "../components/Footer";
+import { Link } from 'react-router-dom';
+import "../Styles/contact.css"; // Assurez-vous que ce fichier est importé correctement
 
 function ContactPage() {
-  // États pour gérer les champs du formulaire
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  // Fonction pour gérer la soumission du formulaire
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Ici, vous pouvez ajouter la logique pour envoyer le message (par exemple, via une API ou un service de messagerie)
     console.log('Nom:', name);
     console.log('Email:', email);
     console.log('Message:', message);
-    // Réinitialiser les champs du formulaire après soumission
     setName('');
     setEmail('');
     setMessage('');
   };
 
   return (
-    <div>
-      <h2>Contactez-moi</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
+    <div className="contact-container">
+      <h2 className="contact-title">Contactez-moi</h2>
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <div className="form-group">
           <label htmlFor="name">Nom :</label>
           <input
             type="text"
@@ -35,7 +31,7 @@ function ContactPage() {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="email">Email :</label>
           <input
             type="email"
@@ -45,7 +41,7 @@ function ContactPage() {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="message">Message :</label>
           <textarea
             id="message"
@@ -54,8 +50,14 @@ function ContactPage() {
             required
           ></textarea>
         </div>
-        <button type="submit">Envoyer</button>
+        <button type="submit" className="submit-button">Envoyer</button>
       </form>
+
+      {/* Exemples de liens supplémentaires */}
+      <div className="contact-links">
+        <Link to="/">Retour à l'accueil</Link>
+        <Link to="/privacy-policy">Politique de confidentialité</Link>
+      </div>
     </div>
   );
 }
