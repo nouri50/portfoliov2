@@ -1,11 +1,11 @@
 
-##Mon Portfolio Personnel
+## Mon Portfolio Personnel
 Bienvenue sur mon portfolio personnel. Ce projet est conçu pour présenter mes compétences, mes projets et mon parcours en tant que développeur web.
 
-##Description
+## Description
 Ce portfolio est un projet strictement personnel et n'est pas destiné à être utilisé, modifié ou distribué par d'autres. Toute utilisation non autorisée de ce projet est interdite.
 
-##Fonctionnalités
+##F onctionnalités
 Présentation de mes projets réalisés.
 Informations sur mon parcours et mes compétences.
 Formulaire de contact pour me joindre directement.
