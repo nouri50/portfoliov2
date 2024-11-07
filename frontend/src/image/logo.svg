@@ -1,0 +1,9 @@
+<svg width="150" height="50" xmlns="http://www.w3.org/2000/svg">
+  <rect width="150" height="50" fill="#282c34" />
+  <text x="10" y="35" font-family="Arial, sans-serif" font-size="24" fill="#00bcd4">
+    NM Developer
+  </text>
+  <text x="120" y="35" font-family="Arial, sans-serif" font-size="24" fill="#00bcd4">
+    </>
+  </text>
+</svg>
