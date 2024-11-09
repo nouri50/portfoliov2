@@ -1,6 +1,5 @@
-// CookieBanner.jsx
 import React, { useState, useEffect } from 'react';
-import '../Styles/CookieBanner.css';
+import "../Styles/CookieBanner.css";
 
 function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
@@ -23,7 +22,7 @@ function CookieBanner() {
     <div className="cookie-banner">
       <p>
         Ce site utilise des cookies pour améliorer votre expérience. En continuant, vous acceptez notre
-        <a href="/privacy-policy" target="_blank" rel="noopener noreferrer"> politique de confidentialité</a>.
+        <a href="/politique" target="_blank" rel="noopener noreferrer"> politique de confidentialité</a>.
       </p>
       <button onClick={handleAccept}>J'accepte</button>
     </div>

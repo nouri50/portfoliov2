@@ -1,6 +1,6 @@
-/* Appliquer un background sur toute l'application */
+
 body, .App {
-    background-image: url('../image/image_background.jpg'); /* Utilisez le bon chemin pour l'image */
+    background-image: url('../image/image_background.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -10,14 +10,14 @@ body, .App {
     font-family: Arial, sans-serif;
   }
   
-  /* Ajustez le contenu pour s'assurer que les cartes se détachent du fond */
+ 
   .content {
     padding: 20px;
   }
   
-  /* Si vous avez des cartes sombres, ajustez la transparence */
+
   .project {
-    background-color: rgba(0, 0, 0, 0.8); /* Ajuste l'opacité pour voir un peu de fond à travers */
+    background-color: rgba(0, 0, 0, 0.8); 
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;

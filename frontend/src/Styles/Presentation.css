@@ -1,41 +1,25 @@
-/* Conteneur principal de la page de présentation */
 .presentation-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 40px;
-  background-size: cover;
+  align-items: center;
+  min-height: 100vh; /* Pour que le footer soit en bas */
+  padding: 20px;
+  background-color: #1a1a1a; /* Couleur de fond */
 }
 
-/* Style de la section de présentation */
 .presentation-section {
-  width: 90%;
-  max-width: 800px;
-  padding: 40px;
-  background-color: rgba(0, 0, 0, 0.6); /* Fond sombre semi-transparent */
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  color: #e0e0e0;
-  font-size: 1.2em;
-  line-height: 1.6;
-  text-align: center;
-  margin-bottom: 20px; /* Espace pour le footer */
+  max-width: 800px; /* Largeur maximale du contenu */
+  margin: 20px;
+  padding: 20px;
+  background-color: #000; /* Couleur de fond */
+  color: #fff; /* Couleur du texte */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
+  line-height: 1.6; /* Espace entre les lignes pour plus de lisibilité */
+  text-align: justify; /* Justification du texte */
 }
 
-/* Titre et paragraphe */
 .presentation-section p {
-  margin-bottom: 15px;
-}
-
-/* Style supplémentaire pour le footer */
-footer {
-  margin-top: auto; /* Assure que le footer reste en bas */
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 0.9em;
-  width: 100%;
+  margin-bottom: 15px; /* Espace entre les paragraphes */
 }

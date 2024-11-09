@@ -1,18 +1,22 @@
 import React from 'react';
-import logo from '../image/nouri morouche.png'; // Mettez à jour le chemin vers l'image
-import '../Styles/Header.css'; // Assurez-vous que le fichier CSS est importé
+import { Link } from 'react-router-dom';
+import '../Styles/Header.css';
 
 function Header() {
   return (
     <header className="header-container">
-      <img src={logo} alt="Logo de Nouri Morouche - Développeur Web" className="logo" />
+      <div className="logo-container">
+        <Link to="/">
+          <img src="/path/to/logo.png" alt="Logo du site" className="logo" />
+        </Link>
+      </div>
       <nav className="nav-menu">
         <ul>
-          <li><a href="/">Accueil</a></li>
-          <li><a href="/about">À propos</a></li>
-          <li><a href="/projects">Projets</a></li>
-          <li><a href="/experience">Parcours</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><Link to="/">Accueil</Link></li>
+          <li><Link to="/about">À propos</Link></li>
+          <li><Link to="/projects">Projets</Link></li>
+          <li><Link to="/experience">Parcours</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
         </ul>
       </nav>
     </header>

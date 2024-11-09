@@ -1,20 +1,68 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import "../Styles/contact.css"; // Assurez-vous que ce fichier est importé correctement
+import "../Styles/contact.css";
 
 function ContactPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [responseMessage, setResponseMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e) => {
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Nom:', name);
-    console.log('Email:', email);
-    console.log('Message:', message);
-    setName('');
-    setEmail('');
-    setMessage('');
+
+    if (!name || !email || !message) {
+      setResponseMessage('Tous les champs sont requis.');
+      setIsSuccess(false);
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setResponseMessage('Veuillez entrer une adresse email valide.');
+      setIsSuccess(false);
+      return;
+    }
+
+    setLoading(true);
+    setResponseMessage('');
+
+    try {
+      const response = await fetch('http://localhost:3001/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          recipient: email,
+          subject: `Nouveau message de ${name}`,
+          content: message,
+        }),
+      });
+
+      if (response.ok) {
+        setResponseMessage('Votre message a été envoyé avec succès !');
+        setIsSuccess(true);
+        setName('');
+        setEmail('');
+        setMessage('');
+      } else {
+        setResponseMessage('Erreur lors de l\'envoi de votre message. Veuillez réessayer.');
+        setIsSuccess(false);
+      }
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi:', error);
+      setResponseMessage('Une erreur est survenue. Veuillez réessayer.');
+      setIsSuccess(false);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -50,13 +98,19 @@ function ContactPage() {
             required
           ></textarea>
         </div>
-        <button type="submit" className="submit-button">Envoyer</button>
+        <button type="submit" className="submit-button" disabled={loading}>
+          {loading ? 'Envoi en cours...' : 'Envoyer'}
+        </button>
+        {responseMessage && (
+          <div className={`message ${isSuccess ? 'success' : 'error'}`}>
+            {responseMessage}
+          </div>
+        )}
       </form>
 
-      {/* Exemples de liens supplémentaires */}
       <div className="contact-links">
         <Link to="/">Retour à l'accueil</Link>
-        <Link to="/privacy-policy">Politique de confidentialité</Link>
+        <Link to="/politique">Politique de confidentialité</Link>
       </div>
     </div>
   );

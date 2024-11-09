@@ -1,24 +1,25 @@
 import React from 'react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa'; // Assurez-vous de les utiliser si importés
-import "../Styles/Footer.css";
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
+import '../Styles/Footer.css';
 
 function Footer() {
   return (
-    <footer>
+    <footer className="footer-container">
       <p className="rights">© 2024 Nouri Morouche. Tous droits réservés.</p>
-      <p>
-        <a href="/politique" className="icon">Politique de Confidentialité</a> |
-        <a href="https://github.com/ton-compte" target="_blank" rel="noopener noreferrer" className="icon">
+      <div className="footer-links">
+        <a href="/privacy-policy" className="footer-link">Politique de confidentialité</a>
+        <a href="https://github.com/ton-compte" target="_blank" rel="noopener noreferrer" className="footer-link">
           <FaGithub /> GitHub
-        </a> |
-        <a href="https://linkedin.com/in/ton-compte" target="_blank" rel="noopener noreferrer" className="icon">
+        </a>
+        <a href="https://linkedin.com/in/ton-compte" target="_blank" rel="noopener noreferrer" className="footer-link">
           <FaLinkedin /> LinkedIn
-        </a> |
-        <a href="/contact" className="icon">Me contacter</a>
-      </p>
+        </a>
+        <Link to="/contact" className="footer-link">Me contacter</Link>
+      </div>
     </footer>
   );
 }
 
 export default Footer;
-

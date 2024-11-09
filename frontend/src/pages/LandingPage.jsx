@@ -4,7 +4,6 @@ import "../Styles/LandingPage.css";
 
 function LandingPage() {
   return (
-
     <div className="landing-container">
       <h1 className="landing-title">Bienvenue sur Mon Portfolio</h1>
       <h2 className="intro-subtitle">
@@ -15,13 +14,11 @@ function LandingPage() {
         <p>Explorez mes projets pour voir ce que j'ai réalisé.</p>
         <Link to="/projects" className="landing-link">Voir les Projets</Link>
       </div>
-
       <div className="section-card">
         <h2>Services</h2>
         <p>Découvrez les services que je propose, tels que le développement web, la création d'applications, et plus encore.</p>
         <Link to="/service" className="landing-link">Voir les Services</Link>
       </div>
-
       <div className="section-card">
         <h2>Contactez-moi</h2>
         <p>N'hésitez pas à me contacter pour toute question ou projet.</p>

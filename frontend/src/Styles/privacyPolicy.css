@@ -1,44 +1,28 @@
-/* Style général de la politique de confidentialité */
 .privacy-policy {
-    background-color: rgba(0, 0, 0, 0.7); /* Fond sombre semi-transparent */
-    padding: 40px;
-    border-radius: 8px;
-    color: white; /* Texte blanc pour une meilleure lisibilité */
-    max-width: 800px;
-    margin: 0 auto; /* Centrer le contenu */
-  }
-  
-  /* Titre principal */
-  .privacy-policy h1 {
-    font-size: 2em;
-    font-weight: bold;
-    color: #00bcd4; /* Couleur vibrante pour le titre */
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Titres des sections */
-  .privacy-policy h2 {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #4fc3f7;
-    margin-top: 20px;
-  }
-  
-  /* Texte de paragraphe */
-  .privacy-policy p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #e0e0e0;
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  
-  /* Pied de page du texte */
-  .footer-policy {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 0.9em;
-    color: #b0b0b0;
-  }
-  
+  max-width: 800px; /* Largeur maximale pour le contenu */
+  margin: 50px auto; /* Centrage horizontal et espacement par rapport au haut */
+  padding: 20px;
+  background-color: #ffffff; /* Couleur de fond */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.privacy-policy h1, .privacy-policy h2, .privacy-policy p {
+  color: #333; /* Couleur du texte */
+}
+
+.privacy-policy h1 {
+  font-size: 2rem;
+  margin-bottom: 20px; /* Espacement sous le titre principal */
+}
+
+.privacy-policy h2 {
+  font-size: 1.5rem;
+  margin-top: 20px; /* Espacement au-dessus des sous-titres */
+  margin-bottom: 10px; /* Espacement sous les sous-titres */
+}
+
+.privacy-policy p {
+  font-size: 1rem;
+  line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+}

@@ -1,60 +1,29 @@
-/* Styles pour le conteneur de l'en-tête */
 .header-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: #333; /* Fond sombre */
+  align-items: center;
   padding: 10px 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre subtile */
+  background-color: #282c34;
+  color: #ffffff;
 }
 
-/* Style du logo */
 .logo {
-  height: 150px; /* Augmentez la taille de 50px à 70px */
-  width: auto; /* Maintenez le ratio */
-  margin-right: 20px;
-  border-radius: 10px; /* Ajoutez un espace entre le logo et le menu si nécessaire */
+  height: 50px;
+  max-width: 100%;
 }
 
-/* Style du menu de navigation */
 .nav-menu ul {
-  display: flex;
   list-style: none;
-  padding: 0;
-  margin: 0;
-  gap: 20px; /* Espacement entre les éléments de la liste */
+  display: flex;
+  gap: 15px;
 }
 
 .nav-menu a {
-  color: #61dafb; /* Bleu clair pour le contraste */
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
+  color: #61dafb;
   transition: color 0.3s;
 }
 
 .nav-menu a:hover {
-  color: #ffffff; /* Blanc lors du survol */
-}
-
-.nav-menu a:active, .nav-menu a:focus {
-  color: #ffffff;
-  border-bottom: 2px solid #61dafb; /* Indicateur de la page active */
-}
-
-/* Ajustements réactifs */
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .logo {
-    height: 40px; /* Taille réduite sur les écrans plus petits */
-  }
-
-  .nav-menu ul {
-    flex-direction: column;
-    gap: 10px;
-  }
+  color: #21a1f1;
 }

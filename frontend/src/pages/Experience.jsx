@@ -8,7 +8,6 @@ function Experience() {
     <div className="experience-container">
       <h1 className="experience-title">Mon Parcours</h1>
 
-      {/* Carte pour l'expérience professionnelle */}
       <div className="experience-card">
         <h2>Expérience Professionnelle</h2>
         <div className="card-content">
@@ -17,7 +16,6 @@ function Experience() {
           <ul>
             <li>Travail sur un projet de développement web.</li>
           </ul>
-          {/* Logos des technologies utilisées */}
           <div className="tech-logos">
             <SiRedux className="tech-icon" />
             <SiTailwindcss className="tech-icon" />
@@ -28,14 +26,12 @@ function Experience() {
         </div>
       </div>
 
-      {/* Carte pour la formation */}
       <div className="experience-card">
         <h2>Formation</h2>
         <div className="card-content">
           <h3>Titre Professionnel de Développeur Web et Web Mobile</h3>
           <p>Date : 2022 - 2023</p>
           <p>Institut : AFCI</p>
-          {/* Logos des technologies enseignées */}
           <div className="tech-logos">
             <FaHtml5 className="tech-icon" />
             <FaCss3Alt className="tech-icon" />
