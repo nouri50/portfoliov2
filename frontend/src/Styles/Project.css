@@ -1,26 +1,68 @@
+/* Style global pour le conteneur */
 .content {
-  max-width: 900px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   padding: 20px;
-  background-color: #1a1a1a;
-  border-radius: 10px;
-  color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.project {
+/* Style commun pour chaque carte de projet */
+.project-card {
   background-color: #2b2b2b;
   border-radius: 10px;
-  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image du projet */
+.project-image img {
+  max-width: 50%;
+  height: auto;
+  width: 80%;
+  display: block;
+  margin: 0 auto; 
+  border-radius: 8px;
+  object-fit: cover; 
+  transition: filter 0.3s;
+  filter: brightness(0.8);
+}
+
+
+
+/* Placeholder pour les projets sans image */
+.project-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  height: 200px;
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+/* Détails du projet */
 .project-details h2 {
+  color: #f1f1f1;
   font-size: 1.8rem;
   margin-bottom: 10px;
 }
 
 .project-details p {
-  margin: 10px 0;
+  color: #d3d3d3;
+  margin: 0 0 10px;
+  line-height: 1.5;
 }
 
 .tech-list {
@@ -29,22 +71,25 @@
 }
 
 .tech-list li {
+  display: flex;
+  align-items: center;
+  color: #b3b3b3;
   margin-bottom: 5px;
 }
 
+.tech-icon {
+  margin-right: 8px;
+  color: #00d8ff; /* Couleur pour les icônes */
+}
+
 .project-link {
-  display: inline-block;
-  margin-top: 10px;
-  color: #007BFF;
+  color: #007bff;
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
 }
 
 .project-link:hover {
+  color: #0056b3;
   text-decoration: underline;
-}
-
-.project-image img {
-  width: 100%;
-  border-radius: 10px;
-  margin-top: 15px;
 }

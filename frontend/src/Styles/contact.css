@@ -1,50 +1,80 @@
+/* Conteneur principal */
 .contact-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; 
-    padding: 40px 20px; 
-  }
-  
-  .contact-form {
-    max-width: 600px; 
-    background-color: #000; 
-    color: #fff; 
-    padding: 30px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  .contact-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 14px; 
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #333;
-    color: #fff; 
-  }
-  
-  .contact-form button {
-    width: 100%; 
-    padding: 10px;
-    background-color: #007AFF;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .contact-form button:hover {
-    background-color: #005bb5; 
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Pour que la page prenne toute la hauteur de la fenêtre */
+  padding: 20px;
+}
+
+/* Formulaire */
+.contact-form {
+  width: 100%;
+  max-width: 500px; /* Réduit la largeur maximale pour éviter un aspect trop étiré */
+  background-color: rgba(0, 0, 0, 0.8); /* Fond légèrement transparent */
+  padding: 30px; /* Augmente l'espace interne pour donner une meilleure apparence */
+  border-radius: 12px; /* Coins plus arrondis */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombre plus subtile */
+}
+
+/* Titre */
+.contact-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff; /* Couleur du texte */
+  font-size: 1.8rem; /* Agrandir le titre */
+}
+
+/* Champs de formulaire */
+.form-group {
+  margin-bottom: 15px; /* Ajoute de l'espace entre les champs */
+}
+
+.form-group label {
+  color: #ddd;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 6px; /* Coins légèrement arrondis */
+  background-color: #333;
+  color: #fff;
+}
+
+/* Bouton d'envoi */
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Liens de navigation */
+.contact-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+}
+
+.contact-links a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  color: #0056b3;
+}

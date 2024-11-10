@@ -5,14 +5,14 @@
   align-items: center;
   min-height: 100vh; /* Pour que le footer soit en bas */
   padding: 20px;
-  background-color: #1a1a1a; /* Couleur de fond */
+  
 }
 
 .presentation-section {
   max-width: 800px; /* Largeur maximale du contenu */
   margin: 20px;
   padding: 20px;
-  background-color: #000; /* Couleur de fond */
+  background-color: gainsboro; /* Couleur de fond */
   color: #fff; /* Couleur du texte */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
@@ -22,4 +22,13 @@
 
 .presentation-section p {
   margin-bottom: 15px; /* Espace entre les paragraphes */
+  color: #333;
+  font-size:  2 rem; 
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+
+
 }

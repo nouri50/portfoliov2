@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../image/nouri morouche.png'; // Importation directe de l'image
 import '../Styles/Header.css';
 
 function Header() {
@@ -7,7 +8,7 @@ function Header() {
     <header className="header-container">
       <div className="logo-container">
         <Link to="/">
-          <img src="/path/to/logo.png" alt="Logo du site" className="logo" />
+          <img src={logo} alt="Logo du site" className="logo" />
         </Link>
       </div>
       <nav className="nav-menu">

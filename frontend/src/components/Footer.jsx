@@ -9,7 +9,7 @@ function Footer() {
     <footer className="footer-container">
       <p className="rights">© 2024 Nouri Morouche. Tous droits réservés.</p>
       <div className="footer-links">
-        <a href="/privacy-policy" className="footer-link">Politique de confidentialité</a>
+        <a href="/politique" className="footer-link">Politique de confidentialité</a>
         <a href="https://github.com/ton-compte" target="_blank" rel="noopener noreferrer" className="footer-link">
           <FaGithub /> GitHub
         </a>

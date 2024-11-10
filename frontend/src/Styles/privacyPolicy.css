@@ -2,7 +2,7 @@
   max-width: 800px; /* Largeur maximale pour le contenu */
   margin: 50px auto; /* Centrage horizontal et espacement par rapport au haut */
   padding: 20px;
-  background-color: #ffffff; /* Couleur de fond */
+  background-color: gainsboro; /* Couleur de fond */
   border-radius: 10px; /* Coins arrondis */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
@@ -25,4 +25,5 @@
 .privacy-policy p {
   font-size: 1rem;
   line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+  margin-bottom: 15px; /* Espacement entre les paragraphes */
 }

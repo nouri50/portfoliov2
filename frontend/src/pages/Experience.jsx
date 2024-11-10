@@ -1,44 +1,44 @@
+// @ts-nocheck
+
 import React from 'react';
+import DOMPurify from 'dompurify'; // Importer DOMPurify
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPhp, FaSymfony, FaDatabase } from 'react-icons/fa';
 import "../Styles/Experience.css";
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaPhp } from "react-icons/fa";
-import { SiRedux, SiTailwindcss, SiSymfony, SiMysql } from "react-icons/si";
 
-function Experience() {
+function Parcours() {
   return (
-    <div className="experience-container">
-      <h1 className="experience-title">Mon Parcours</h1>
+    <div className="parcours-container">
+      <h1>{DOMPurify.sanitize('Mon Parcours')}</h1>
 
-      <div className="experience-card">
-        <h2>Expérience Professionnelle</h2>
-        <div className="card-content">
-          <h3>Stage en Développement Web - Insy2s</h3>
-          <p>Date : novembre 2023 - février 2024</p>
+      <div className="experience">
+        <h2>{DOMPurify.sanitize('Expérience Professionnelle')}</h2>
+        <div className="card">
+          <h3>{DOMPurify.sanitize('Stage en Développement Web - Insy2s')}</h3>
+          <p>{DOMPurify.sanitize('Date : novembre 2023 - février 2024')}</p>
           <ul>
-            <li>Travail sur un projet de développement web.</li>
+            <li>{DOMPurify.sanitize('Travail sur un projet de développement web.')}</li>
           </ul>
-          <div className="tech-logos">
-            <SiRedux className="tech-icon" />
-            <SiTailwindcss className="tech-icon" />
-            <FaPhp className="tech-icon" />
-            <SiSymfony className="tech-icon" />
-            <SiMysql className="tech-icon" />
+          <div className="skills">
+            <FaPhp className="skill-icon" />
+            <FaSymfony className="skill-icon" />
+            <FaDatabase className="skill-icon" />
           </div>
         </div>
       </div>
 
-      <div className="experience-card">
-        <h2>Formation</h2>
-        <div className="card-content">
-          <h3>Titre Professionnel de Développeur Web et Web Mobile</h3>
-          <p>Date : 2022 - 2023</p>
-          <p>Institut : AFCI</p>
-          <div className="tech-logos">
-            <FaHtml5 className="tech-icon" />
-            <FaCss3Alt className="tech-icon" />
-            <FaJsSquare className="tech-icon" />
-            <FaReact className="tech-icon" />
-            <FaPhp className="tech-icon" />
-            <SiMysql className="tech-icon" />
+      <div className="formation">
+        <h2>{DOMPurify.sanitize('Formation')}</h2>
+        <div className="card">
+          <h3>{DOMPurify.sanitize('Titre Professionnel de Développeur Web et Web Mobile')}</h3>
+          <p>{DOMPurify.sanitize('Date : 2022 - 2023')}</p>
+          <p>{DOMPurify.sanitize('Institut : AFCI')}</p>
+          <div className="skills">
+            <FaHtml5 className="skill-icon" />
+            <FaCss3Alt className="skill-icon" />
+            <FaJs className="skill-icon" />
+            <FaReact className="skill-icon" />
+            <FaPhp className="skill-icon" />
+            <FaDatabase className="skill-icon" />
           </div>
         </div>
       </div>
@@ -46,4 +46,4 @@ function Experience() {
   );
 }
 
-export default Experience;
+export default Parcours;

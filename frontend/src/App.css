@@ -1,15 +1,28 @@
-/* Conteneur principal pour occuper toute la page avec flexbox */
-.background-container {
+/* Assurer que le conteneur principal prend toute la hauteur */
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Assure que le fond occupe toute la hauteur de l'écran */
-  background: url('./image_background.jpg') no-repeat center center fixed;
-  background-size: cover;
 }
 
-.app-container {
+/* Conteneur principal de la page */
+.content-container {
+  flex: 1; /* Prend tout l'espace disponible pour pousser le footer vers le bas */
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
 
+/* Contenu principal de la page */
+.main-content {
+  flex: 1; /* Permet au contenu de s'étendre pour occuper l'espace disponible */
+}
+
+/* Footer */
+.footer {
+  background-color: #1a1a1a;
+  color: #aaa;
+  padding: 10px 0;
+  text-align: center;
+}

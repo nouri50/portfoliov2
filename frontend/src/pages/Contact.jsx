@@ -1,4 +1,7 @@
+// @ts-nocheck
+
 import React, { useState } from 'react';
+import DOMPurify from 'dompurify'; // Importer DOMPurify
 import { Link } from 'react-router-dom';
 import "../Styles/contact.css";
 
@@ -19,13 +22,13 @@ function ContactPage() {
     e.preventDefault();
 
     if (!name || !email || !message) {
-      setResponseMessage('Tous les champs sont requis.');
+      setResponseMessage(DOMPurify.sanitize('Tous les champs sont requis.'));
       setIsSuccess(false);
       return;
     }
 
     if (!validateEmail(email)) {
-      setResponseMessage('Veuillez entrer une adresse email valide.');
+      setResponseMessage(DOMPurify.sanitize('Veuillez entrer une adresse email valide.'));
       setIsSuccess(false);
       return;
     }
@@ -42,23 +45,23 @@ function ContactPage() {
         body: JSON.stringify({
           recipient: email,
           subject: `Nouveau message de ${name}`,
-          content: message,
+          content: DOMPurify.sanitize(message), // Sécuriser le contenu du message
         }),
       });
 
       if (response.ok) {
-        setResponseMessage('Votre message a été envoyé avec succès !');
+        setResponseMessage(DOMPurify.sanitize('Votre message a été envoyé avec succès !'));
         setIsSuccess(true);
         setName('');
         setEmail('');
         setMessage('');
       } else {
-        setResponseMessage('Erreur lors de l\'envoi de votre message. Veuillez réessayer.');
+        setResponseMessage(DOMPurify.sanitize('Erreur lors de l\'envoi de votre message. Veuillez réessayer.'));
         setIsSuccess(false);
       }
     } catch (error) {
       console.error('Erreur lors de l\'envoi:', error);
-      setResponseMessage('Une erreur est survenue. Veuillez réessayer.');
+      setResponseMessage(DOMPurify.sanitize('Une erreur est survenue. Veuillez réessayer.'));
       setIsSuccess(false);
     } finally {
       setLoading(false);

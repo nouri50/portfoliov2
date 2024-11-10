@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c3c911b4.css",
+    "main.js": "/static/js/main.f8309e1a.js",
+    "static/js/453.1407b060.chunk.js": "/static/js/453.1407b060.chunk.js",
+    "static/media/image_background.jpg": "/static/media/image_background.86c66569a3e124d88c5b.jpg",
+    "static/media/gestionnaire_des_tache.png": "/static/media/gestionnaire_des_tache.8600ed76e5e8e156a268.png",
+    "static/media/nouri morouche.png": "/static/media/nouri morouche.1aade2399637c3a3f485.png",
+    "index.html": "/index.html",
+    "main.c3c911b4.css.map": "/static/css/main.c3c911b4.css.map",
+    "main.f8309e1a.js.map": "/static/js/main.f8309e1a.js.map",
+    "453.1407b060.chunk.js.map": "/static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3c911b4.css",
+    "static/js/main.f8309e1a.js"
+  ]
+}
