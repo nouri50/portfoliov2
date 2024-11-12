@@ -1,7 +1,8 @@
-// @ts-nocheck
+// ContactPage.jsx
 
 import React, { useState } from 'react';
-import DOMPurify from 'dompurify'; // Importer DOMPurify
+import { Helmet } from 'react-helmet'; // Import de Helmet pour gérer les balises SEO
+import DOMPurify from 'dompurify';
 import { Link } from 'react-router-dom';
 import "../Styles/contact.css";
 
@@ -45,7 +46,7 @@ function ContactPage() {
         body: JSON.stringify({
           recipient: email,
           subject: `Nouveau message de ${name}`,
-          content: DOMPurify.sanitize(message), // Sécuriser le contenu du message
+          content: DOMPurify.sanitize(message),
         }),
       });
 
@@ -70,6 +71,12 @@ function ContactPage() {
 
   return (
     <div className="contact-container">
+      <Helmet>
+        <title>Contactez-moi - Mon Portfolio</title>
+        <meta name="description" content="Contactez-moi pour discuter de projets, collaborations ou toute autre question." />
+        <meta name="keywords" content="portfolio, contact, développeur web" />
+        <meta name="author" content="Nouri Morouche" />
+      </Helmet>
       <h2 className="contact-title">Contactez-moi</h2>
       <form className="contact-form" onSubmit={handleSubmit}>
         <div className="form-group">

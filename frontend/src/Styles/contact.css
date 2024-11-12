@@ -1,58 +1,76 @@
-/* Conteneur principal */
+/* Style de base pour le formulaire */
 .contact-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Pour que la page prenne toute la hauteur de la fenêtre */
-  padding: 20px;
+  max-width: 700px;
+  margin: 50px auto;
+  background-color:dimgrey;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  box-sizing: border-box;
+  margin-bottom: 90px;
+  margin-top: 60px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+
+
 }
 
-/* Formulaire */
-.contact-form {
-  width: 100%;
-  max-width: 500px; /* Réduit la largeur maximale pour éviter un aspect trop étiré */
-  background-color: rgba(0, 0, 0, 0.8); /* Fond légèrement transparent */
-  padding: 30px; /* Augmente l'espace interne pour donner une meilleure apparence */
-  border-radius: 12px; /* Coins plus arrondis */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombre plus subtile */
-}
-
-/* Titre */
 .contact-title {
   text-align: center;
   margin-bottom: 20px;
-  color: #fff; /* Couleur du texte */
-  font-size: 1.8rem; /* Agrandir le titre */
+  font-size: 24px;
+  font-weight: bold;
+  color: bisque;
+  transition: color 0.3s;
+  transition: text-shadow 0.3s;
+
 }
 
-/* Champs de formulaire */
-.form-group {
-  margin-bottom: 15px; /* Ajoute de l'espace entre les champs */
+.contact-form .form-group {
+  margin-bottom: 15px;
+  transition: background-color 0.3s;
+  cursor: pointer;
 }
 
-.form-group label {
-  color: #ddd;
+.contact-form label {
+  display: block;
   margin-bottom: 5px;
+  font-weight: bold;
+  color:bisque;
+  font-size: 16px;
+  transition: color 0.3s;
 }
 
-.form-group input,
-.form-group textarea {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #555;
-  border-radius: 6px; /* Coins légèrement arrondis */
-  background-color: #333;
-  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
 }
 
-/* Bouton d'envoi */
+.contact-form textarea {
+  resize: vertical;
+  height: 100px;
+  font-family: inherit;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .submit-button {
-  background-color: #007bff;
-  color: #fff;
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
   border: none;
-  padding: 12px;
-  border-radius: 6px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -61,20 +79,56 @@
   background-color: #0056b3;
 }
 
-/* Liens de navigation */
 .contact-links {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 500px;
+  text-align: center;
+  margin-top: 15px;
 }
 
 .contact-links a {
-  color: #007bff;
+  color: #fff;
   text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
+  font-weight: bold;  
+  text-align: center;  
+  line-height: 1.5;  
+  letter-spacing: 0.05em; 
+  text-transform: uppercase; 
+  transition: color 0.3s ease; 
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+ 
+  
+ 
 }
 
 .contact-links a:hover {
+  text-decoration: underline;
   color: #0056b3;
+  transition: color 0.3s ease;  
+
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 15px;
+    margin: 10px;
+    max-width: 100%;
+
+  }
+
+  .contact-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .submit-button {
+    font-size: 14px;
+
+  }
+  .contact-links{
+    margin-top: 10px;
+    text-align: left;
+
+  }
 }

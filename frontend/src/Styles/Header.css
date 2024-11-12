@@ -2,28 +2,134 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #282c34;
-  color: #ffffff;
+  padding: 15px 20px;
+  background-color: #333;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+
+
 }
 
-.logo {
-  height: 50px;
-  max-width: 100%;
+.logo-container img {
+  height: 80px;
+  transition: height 0.3s;
+  transform: scale(1);
+  will-change: height;
+
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  transform: rotate(0deg);
+  will-change: transform;
+  transition: background-color 0.3s;
+
+}
+
+.burger-menu .line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s;
+  transform: rotate(0deg);
+}
+
+.burger-menu .line.open {
+  background-color: #007bff;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  flex-direction: row; 
+
 }
 
 .nav-menu ul {
-  list-style: none;
   display: flex;
-  gap: 15px;
+  flex-direction: row;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: flex-end;
+  transition: transform 0.3s;
+  transform: translateX(0);
+  will-change: transform;
+  transition: opacity 0.3s;
+  opacity: 1;
+  visibility: visible;
 }
 
-.nav-menu a {
+.nav-menu li a {
+  color: #fff;
   text-decoration: none;
-  color: #61dafb;
+  font-weight: 500;
   transition: color 0.3s;
+  transition: background-color 0.3s;
+  background-color: #333;
+  transition: opacity 0.3s;
+  transition: visibility 0.3s;
+  visibility: visible;
+ 
 }
 
-.nav-menu a:hover {
-  color: #21a1f1;
+.nav-menu li a:hover {
+  color: #007bff;
+  text-decoration: underline;
+  transition: color 0.3s;
+  transition: background-color 0.3s;
+  background-color: #212121;
+  transition: opacity 0.3s;
+  transition: visibility 0.3s;
+  visibility: visible;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 10px; 
+    
+  }
+
+  .nav-menu.active {
+    display: flex; 
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    opacity: 1;
+    visibility: visible;
+
+  }
+
+  .nav-menu ul {
+    flex-direction: column; /* Alignement vertical */
+    gap: 15px; /* Espacement entre les éléments */
+  }
+
+  .burger-menu {
+    display: flex; /* Affiche le menu burger en mode mobile */
+  }
 }

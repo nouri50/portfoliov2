@@ -8,16 +8,21 @@ import Projects from './pages/Projects.jsx';
 import Experience from './pages/Experience.jsx';
 import Contact from './pages/Contact.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
-import CookieBanner from './components/CookieBanner'; // Import de la bannière de cookies
-import './Styles/Background.css'; // Assurez-vous que le fond est bien défini dans ce fichier CSS
+import NotFound from './pages/NotFound.jsx'; 
+import CookieBanner from './components/CookieBanner';
+import ScrollToTop from './components/ScrollToTop'; 
+import Services from './pages/Mes-service.jsx';
+import './Styles/Background.css'; 
+import './reset/index.css';
 
 function App() {
   return (
     <Router>
-      <div className="background-container"> {/* Ce div contiendra le fond */}
+      <ScrollToTop /> {/* Permet de revenir en haut lors du changement de route */}
+      <div className="background-container">
         <div className="app-container">
           <Header />
-          <CookieBanner /> {/* Placement de la bannière ici */}
+          <CookieBanner />
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<About />} />
@@ -25,6 +30,8 @@ function App() {
             <Route path="/experience" element={<Experience />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/politique" element={<PrivacyPolicy />} />
+            <Route path="/services" element={ <Services />} />
+            <Route path="*" element={<NotFound />} /> 
           </Routes>
           <Footer />
         </div>

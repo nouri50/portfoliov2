@@ -1,23 +1,34 @@
 .footer-container {
-  text-align: center;
-  padding: 20px;
-  background-color: #20232a;
+  background-color: #333333;
   color: #ffffff;
-  margin-top: auto;
+  padding: 20px;
+  text-align: center;
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
   gap: 15px;
+  margin-top: 10px;
 }
 
 .footer-link {
-  color: #61dafb;
-  text-decoration: none;
-  transition: color 0.3s;
+  color: #ffffff;
+  font-size: 0.9rem;
 }
 
 .footer-link:hover {
-  color: #21a1f1;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.rights {
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+  }
 }
