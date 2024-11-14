@@ -1,15 +1,9 @@
 import React from 'react';
-import DOMPurify from 'dompurify';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import '../Styles/Footer.css';
 
 function Footer() {
-  // Cette fonction ne devrait être utilisée que pour le contenu HTML vraiment nécessaire
-  const sanitizedContent = (content) => {
-    return { __html: DOMPurify.sanitize(content) };
-  };
-
   return (
     <footer className="footer-container">
       <p className="rights">© 2024 Nouri Morouche. Tous droits réservés.</p>

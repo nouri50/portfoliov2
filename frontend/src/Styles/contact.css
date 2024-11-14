@@ -1,134 +1,104 @@
-/* Style de base pour le formulaire */
 .contact-container {
-  max-width: 700px;
-  margin: 50px auto;
-  background-color:dimgrey;
+  max-width: 800px;
+  margin: 100px auto 50px;
+  padding: 20px;
+  background-color: #d3d3d3; /* Gris clair pour un bon contraste */
+  color: #333; /* Couleur de texte foncé */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 50px;
-  box-sizing: border-box;
-  margin-bottom: 90px;
-  margin-top: 60px;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-
-
+  text-align: center;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* Titre de la page */
 .contact-title {
-  text-align: center;
+  font-size: 2rem;
   margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  color: bisque;
-  transition: color 0.3s;
-  transition: text-shadow 0.3s;
-
-}
-
-.contact-form .form-group {
-  margin-bottom: 15px;
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-
-.contact-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color:bisque;
-  font-size: 16px;
-  transition: color 0.3s;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  transition: border-color 0.3s;
-}
-
-.contact-form textarea {
-  resize: vertical;
-  height: 100px;
-  font-family: inherit;
-  font-weight: bold;
+  color: #333;
   text-align: center;
-  line-height: 1.5;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.submit-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007BFF;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 16px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: color 0.3s, text-shadow 0.3s, background-color 0.3s;
 }
 
-.submit-button:hover {
-  background-color: #0056b3;
+/* Texte descriptif */
+.contact-container p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #d3d3d3 ;
+  text-shadow: 2px 1px 4px rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: color 0.3s, text-shadow 0.3s, background-color 0.3s;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: Arial, sans-serif;
 }
 
-.contact-links {
-  text-align: center;
+/* Lien mailto */
+.mailto-link {
+  display: inline-block;
   margin-top: 15px;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: underline dashed 2px #0056b3;
+  font: 2em Arial, sans-serif;
+  letter-spacing: 0.5px;
+  transition: color 0.3s, text-shadow 0.3s, background-color 0.3s;
+}
+
+.mailto-link:hover {
+  color: #0056b3;
+  font-size: 20px;
+  text-decoration-thickness: 2px;
+}
+
+/* Liens de navigation */
+.contact-links {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 .contact-links a {
-  color: #fff;
-  text-decoration: none;
   margin: 0 10px;
-  transition: color 0.3s;
-  font-weight: bold;  
-  text-align: center;  
-  line-height: 1.5;  
-  letter-spacing: 0.05em; 
-  text-transform: uppercase; 
-  transition: color 0.3s ease; 
-   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
- 
-  
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s, background-color 0.3s;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  text-decoration: underline dashed 2px #0056b3;
  
 }
 
 .contact-links a:hover {
-  text-decoration: underline;
   color: #0056b3;
-  transition: color 0.3s ease;  
-
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  text-decoration: underline dashed 2px #0056b3;
+  
 }
 
-/* Responsive */
+/* Responsive design */
 @media (max-width: 768px) {
   .contact-container {
     padding: 15px;
-    margin: 10px;
-    max-width: 100%;
-
   }
 
   .contact-title {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
   }
 
-  .submit-button {
-    font-size: 14px;
-
-  }
-  .contact-links{
-    margin-top: 10px;
-    text-align: left;
-
+  .contact-container p {
+    font-size: 0.9rem;
   }
 }

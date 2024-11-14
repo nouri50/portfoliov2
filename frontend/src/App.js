@@ -10,7 +10,7 @@ import Contact from './pages/Contact.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 import NotFound from './pages/NotFound.jsx'; 
 import CookieBanner from './components/CookieBanner';
-import ScrollToTop from './components/ScrollToTop'; 
+import ScrollToTop from './components/ScrollToTop.jsx'; 
 import Services from './pages/Mes-service.jsx';
 import './Styles/Background.css'; 
 import './reset/index.css';

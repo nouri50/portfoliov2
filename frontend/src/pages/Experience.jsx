@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet'; // Import de Helmet pour le SEO
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaSymfony, FaNodeJs, FaDatabase, FaFigma, FaGitAlt } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaSymfony, FaNodeJs,FaFigma, FaGitAlt } from 'react-icons/fa';
 import { SiPostgresql, SiExpress, SiAxios, SiVisualstudiocode, SiJira, SiMysql } from 'react-icons/si';
 import "../Styles/Experience.css";
 
