@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import '../Styles/Footer.css';
 
 function Footer() {
@@ -15,8 +14,7 @@ function Footer() {
         <a href="https://www.linkedin.com/in/nouri-morouche-9a8237140/" target="_blank" rel="noopener noreferrer" className="footer-link">
           <FaLinkedin /> LinkedIn
         </a>
-        <Link to="/contact" className="footer-link">Me contacter</Link>
-      </div>
+        </div>
     </footer>
   );
 }

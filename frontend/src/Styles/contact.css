@@ -2,8 +2,8 @@
   max-width: 800px;
   margin: 100px auto 50px;
   padding: 20px;
-  background-color: #d3d3d3; /* Gris clair pour un bon contraste */
-  color: #333; /* Couleur de texte foncé */
+  background-color: #d3d3d3;
+  color: #333;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   text-align: center;
@@ -13,51 +13,40 @@
   justify-content: center;
 }
 
-/* Titre de la page */
 .contact-title {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #333;
-  text-align: center;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: color 0.3s, text-shadow 0.3s, background-color 0.3s;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
-/* Texte descriptif */
 .contact-container p {
-  font-size: 1rem;
   margin-bottom: 20px;
-  color: #d3d3d3 ;
+  color: #d3d3d3;
   text-shadow: 2px 1px 4px rgba(0, 0, 0, 0.7);
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: color 0.3s, text-shadow 0.3s, background-color 0.3s;
   font-weight: bold;
   font-size: 30px;
   font-family: Arial, sans-serif;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
-/* Lien mailto */
 .mailto-link {
   display: inline-block;
   margin-top: 15px;
   color: #007bff;
   font-weight: bold;
   text-decoration: underline dashed 2px #0056b3;
-  font: 2em Arial, sans-serif;
+  font-size: 2em;
+  font-family: Arial, sans-serif;
   letter-spacing: 0.5px;
-  transition: color 0.3s, text-shadow 0.3s, background-color 0.3s;
+  transition: color 0.3s;
 }
 
 .mailto-link:hover {
   color: #0056b3;
-  font-size: 20px;
-  text-decoration-thickness: 2px;
 }
 
-/* Liens de navigation */
 .contact-links {
   margin-top: 30px;
   display: flex;
@@ -66,39 +55,13 @@
 }
 
 .contact-links a {
-  margin: 0 10px;
   color: #007bff;
-  text-decoration: none;
-  transition: color 0.3s, text-shadow 0.3s, background-color 0.3s;
   font-size: 15px;
   font-family: Arial, sans-serif;
-  letter-spacing: 0.5px;
-  font-weight: bold;
   text-decoration: underline dashed 2px #0056b3;
- 
+  transition: color 0.3s;
 }
 
 .contact-links a:hover {
   color: #0056b3;
-  font-size: 15px;
-  font-family: Arial, sans-serif;
-  letter-spacing: 0.5px;
-  font-weight: bold;
-  text-decoration: underline dashed 2px #0056b3;
-  
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .contact-container {
-    padding: 15px;
-  }
-
-  .contact-title {
-    font-size: 1.5rem;
-  }
-
-  .contact-container p {
-    font-size: 0.9rem;
-  }
 }

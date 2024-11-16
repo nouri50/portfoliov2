@@ -15,7 +15,7 @@ function ContactPage() {
       
       <h2 className="contact-title">Contactez-moi</h2>
       <p>Pour toute question ou collaboration, n'hésitez pas à m'envoyer un email en cliquant sur le lien ci-dessous.</p>
-      <a href="mailto:monadresseemail@example.com" className="mailto-link">Envoyer un email</a>
+      <a href="mailto:nourimorouche@sfr.fr" className="mailto-link">Envoyer un email</a>
 
       <div className="contact-links">
         <Link to="/">Retour à l'accueil</Link>

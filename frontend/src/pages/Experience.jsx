@@ -1,8 +1,6 @@
-// Experience.jsx
-
 import React from 'react';
-import { Helmet } from 'react-helmet'; // Import de Helmet pour le SEO
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaSymfony, FaNodeJs,FaFigma, FaGitAlt } from 'react-icons/fa';
+import { Helmet } from 'react-helmet'; 
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaSymfony, FaNodeJs, FaFigma, FaGitAlt } from 'react-icons/fa';
 import { SiPostgresql, SiExpress, SiAxios, SiVisualstudiocode, SiJira, SiMysql } from 'react-icons/si';
 import "../Styles/Experience.css";
 
@@ -15,7 +13,6 @@ function Experience() {
         <meta name="keywords" content="expérience professionnelle, formation, compétences, développeur web, technologies, outils, React, Node.js, MySQL, portfolio" />
       </Helmet>
 
-      {/* Carte Expérience Professionnelle */}
       <div className="card">
         <h2>Expérience Professionnelle</h2>
         <p>Stage en Développement Web - Insy2s</p>
@@ -23,7 +20,6 @@ function Experience() {
         <p>Travail sur un projet de développement web.</p>
       </div>
 
-      {/* Carte Formation */}
       <div className="card">
         <h2>Formation</h2>
         <p>Titre Professionnel de Développeur Web et Web Mobile</p>
@@ -34,7 +30,6 @@ function Experience() {
         <p>Novembre 2022 - Incubateur nurserie, m2i à distance</p>
       </div>
 
-      {/* Carte pour les technologies et outils maîtrisés */}
       <div className="card">
         <h2>Technologies et Outils Maîtrisés</h2>
         <div className="tech-section">

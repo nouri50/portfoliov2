@@ -3,7 +3,7 @@ import { FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
 import "../Styles/Project.css";
 
 // Import de l'image pour le projet existant
-import projectImage1 from '../image/gestionnaire_des_tache.png'; // Chemin de l'image du projet 1
+import projectImage1 from '../image/gestionnaire_des_tache_comp.webp'; // Chemin de l'image du projet 1
 
 function Project() {
   return (
