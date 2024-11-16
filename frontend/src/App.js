@@ -18,7 +18,7 @@ import './reset/index.css';
 function App() {
   return (
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <ScrollToTop /> {/* Permet de revenir en haut lors du changement de route */}
+      <ScrollToTop /> 
       <div className="background-container">
         <div className="app-container">
           <Header />

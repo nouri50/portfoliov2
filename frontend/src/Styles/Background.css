@@ -11,18 +11,22 @@ body, .App {
   transition: background-color 0.3s ease-in-out;
 }
 
-.content {
-  padding: 20px;
+/* Conteneur principal de l'application */
+.background-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  min-height: 100vh; /* Prend toute la hauteur de l'écran */
+}
+
+.app-container {
+  flex: 1; /* Permet au contenu de s'étendre */
+  display: flex;
   flex-direction: column;
 }
 
-.project {
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  color: white;
+/* Footer */
+.footer-container {
+  margin-top: auto; /* Pousse le footer vers le bas */
 }
+
+

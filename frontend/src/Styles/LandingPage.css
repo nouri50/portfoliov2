@@ -12,10 +12,11 @@
   color: whitesmoke;
   text-align: center;
   margin-bottom: 20px;
-  background-color: blanchedalmond;
   padding: 20px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
   letter-spacing: 1px;
+  transition: color 0.3s, text-shadow 0.3s;
+
 
 }
 
@@ -24,6 +25,11 @@
   color: whitesmoke;
   text-align: center;
   margin-bottom: 20px;
+  padding: 20px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
+  transition: color 0.3s, text-shadow 0.3s;
+
 
 }
 
@@ -33,6 +39,9 @@
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
 
 }
@@ -40,17 +49,20 @@
 .section-card h2 {
   color: whitesmoke;
   margin-bottom: 20px;
-  font-size: 2rem;
+  font-size: 3rem;
   transition: color 0.3s;
   transition: text-shadow 0.3s;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .section-card p {
   color: whitesmoke;
   margin-bottom: 10px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   transition: color 0.3s;
   transition: text-shadow 0.3s;
+
 
 }
 
@@ -61,8 +73,22 @@
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
+  transition: text-shadow 0.3s;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 10px 10px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+
 }
 
 .landing-link:hover {
   color: #0056b3;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
