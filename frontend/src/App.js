@@ -8,17 +8,17 @@ import Projects from './pages/Projects.jsx';
 import Experience from './pages/Experience.jsx';
 import Contact from './pages/Contact.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
-import NotFound from './pages/NotFound.jsx'; 
+import NotFound from './pages/NotFound.jsx';
 import CookieBanner from './components/CookieBanner';
-import ScrollToTop from './components/ScrollToTop'; 
+import ScrollToTop from './components/ScrollToTop.jsx';
 import Services from './pages/Mes-service.jsx';
-import './Styles/Background.css'; 
+import './Styles/Background.css';
 import './reset/index.css';
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop /> {/* Permet de revenir en haut lors du changement de route */}
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <ScrollToTop /> 
       <div className="background-container">
         <div className="app-container">
           <Header />
@@ -31,7 +31,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/politique" element={<PrivacyPolicy />} />
             <Route path="/services" element={ <Services />} />
-            <Route path="*" element={<NotFound />} /> 
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </div>

@@ -6,10 +6,18 @@ function CookieBanner() {
 
   useEffect(() => {
     const consent = localStorage.getItem('cookieConsent');
+    console.log('Consent:', consent);
     if (!consent) {
       setShowBanner(true);
+      console.log('Banner shown');
     }
   }, []);
+  
+  if (!showBanner) {
+    console.log('Banner hidden');
+    return null;
+  }
+  
 
   const handleAccept = () => {
     localStorage.setItem('cookieConsent', 'true');
