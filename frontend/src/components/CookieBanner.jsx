@@ -1,26 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import "../Styles/CookieBanner.css";
+import React, { useState } from 'react';
+import '../Styles/CookieBanner.css'
 
-function CookieBanner() {
-  const [showBanner, setShowBanner] = useState(false);
+const CookieBanner = () => {
+  const [showBanner, setShowBanner] = useState(true);
 
-  useEffect(() => {
-    const consent = localStorage.getItem('cookieConsent');
-    console.log('Consent:', consent);
-    if (!consent) {
-      setShowBanner(true);
-      console.log('Banner shown');
+  const acceptCookies = () => {
+    // Activez Google Analytics
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
     }
-  }, []);
-  
-  if (!showBanner) {
-    console.log('Banner hidden');
-    return null;
-  }
-  
-
-  const handleAccept = () => {
-    localStorage.setItem('cookieConsent', 'true');
+    gtag('js', new Date());
+    gtag('config', 'G-72S8X47T2F');
     setShowBanner(false);
   };
 
@@ -28,13 +19,10 @@ function CookieBanner() {
 
   return (
     <div className="cookie-banner">
-      <p>
-        Ce site utilise des cookies pour améliorer votre expérience. En continuant, vous acceptez notre
-        <a href="/politique" target="_blank" rel="noopener noreferrer"> politique de confidentialité</a>.
-      </p>
-      <button onClick={handleAccept}>J'accepte</button>
+      <p>Ce site utilise des cookies pour améliorer votre expérience. En continuant, vous acceptez leur utilisation.</p>
+      <button onClick={acceptCookies}>Accepter</button>
     </div>
   );
-}
+};
 
 export default CookieBanner;

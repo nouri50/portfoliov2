@@ -1,9 +1,21 @@
 import React from 'react';
 import { FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
 import "../Styles/Project.css";
+import { Helmet } from 'react-helmet';
 
-// Import de l'image pour le projet existant
-import projectImage1 from '../image/gestionnaire_des_tache_comp.webp'; // Chemin de l'image du projet 1
+import projectImage1 from '../image/gestionnaire_des_tache_comp.webp'; 
+
+
+      <Helmet>
+        <title>Mes Projets - Portfolio</title>
+        <meta name="description" content="Découvrez mes projets en développement web et applications." />
+        <meta property="og:title" content="Mes Projets - Portfolio" />
+        <meta property="og:description" content="Découvrez mes projets en développement web et applications." />
+        <meta property="og:url" content="https://nmoroucheportfolio.fr/projects" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/images/portfolio-thumbnail.png" />
+        <link rel="canonical" href="https://nmoroucheportfolio.fr/projects" />
+      </Helmet>
 
 function Project() {
   return (

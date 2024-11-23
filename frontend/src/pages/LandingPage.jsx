@@ -1,6 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "../Styles/LandingPage.css";
+import { Helmet } from 'react-helmet';
+
+
+      <Helmet>
+        <title>Bienvenue sur mon Portfolio</title>
+        <meta name="description" content="Explorez mes projets, services et expertise en développement web." />
+        <meta property="og:title" content="Bienvenue sur mon Portfolio" />
+        <meta property="og:description" content="Explorez mes projets, services et expertise en développement web." />
+        <meta property="og:url" content="https://nmoroucheportfolio.fr/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/images/portfolio-thumbnail.png" />
+        <link rel="canonical" href="https://nmoroucheportfolio.fr/" />
+      </Helmet>
 
 function LandingPage() {
   return (

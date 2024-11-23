@@ -1,5 +1,17 @@
 import React from 'react';
 import "../Styles/mes-service.css";
+import { Helmet } from 'react-helmet';
+
+      <Helmet>
+        <title>Mes Services - Portfolio</title>
+        <meta name="description" content="Découvrez les services de développement web que je propose." />
+        <meta property="og:title" content="Mes Services - Portfolio" />
+        <meta property="og:description" content="Découvrez les services de développement web que je propose." />
+        <meta property="og:url" content="https://nmoroucheportfolio.fr/services" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/images/portfolio-thumbnail.png" />
+        <link rel="canonical" href="https://nmoroucheportfolio.fr/services" />
+      </Helmet>
 
 function Services() {
   return (

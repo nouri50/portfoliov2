@@ -1,5 +1,17 @@
 import React from 'react';
 import "../Styles/privacyPolicy.css";
+import { Helmet } from 'react-helmet';
+
+      <Helmet>
+        <title>Politique de Confidentialité - Portfolio</title>
+        <meta name="description" content="Lisez notre politique de confidentialité pour en savoir plus sur la gestion de vos données." />
+        <meta property="og:title" content="Politique de Confidentialité - Portfolio" />
+        <meta property="og:description" content="Lisez notre politique de confidentialité pour en savoir plus sur la gestion de vos données." />
+        <meta property="og:url" content="https://nmoroucheportfolio.fr/politique" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/images/portfolio-thumbnail.png" />
+        <link rel="canonical" href="https://nmoroucheportfolio.fr/politique" />
+      </Helmet>
 
 function PrivacyPolicy() {
   return (

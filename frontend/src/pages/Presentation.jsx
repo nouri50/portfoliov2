@@ -1,5 +1,17 @@
 import React from 'react';
 import '../Styles/Presentation.css';
+import { Helmet } from 'react-helmet';
+
+      <Helmet>
+        <title>Présentation - Portfolio</title>
+        <meta name="description" content="Apprenez-en plus sur mon parcours et ma vision en développement web." />
+        <meta property="og:title" content="Présentation - Portfolio" />
+        <meta property="og:description" content="Apprenez-en plus sur mon parcours et ma vision en développement web." />
+        <meta property="og:url" content="https://nmoroucheportfolio.fr/presentation" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/images/portfolio-thumbnail.png" />
+        <link rel="canonical" href="https://nmoroucheportfolio.fr/presentation" />
+      </Helmet>
 
 function PresentationSection() {
   return (
