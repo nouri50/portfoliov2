@@ -6,73 +6,84 @@ import "../Styles/Experience.css";
 
 function Experience() {
   return (
-    <div className="experience-container">
+    <main className="experience-container">
       <Helmet>
         <title>Mon Parcours et Mes Compétences - Portfolio</title>
-        <meta name="description" content="Découvrez mon expérience professionnelle, ma formation et les technologies ainsi que les outils que je maîtrise en tant que développeur web." />
-        <meta name="keywords" content="expérience professionnelle, formation, compétences, développeur web, technologies, outils, React, Node.js, MySQL, portfolio" />
+        <meta 
+          name="description" 
+          content="Explorez mon expérience professionnelle, ma formation et les outils technologiques que je maîtrise en tant que développeur web. Technologies : React, Node.js, MySQL." 
+        />
+        <meta 
+          name="keywords" 
+          content="expérience développeur web, React, Node.js, formation développeur web, MySQL, technologies, portfolio développeur" 
+        />
+        <meta name="author" content="Nouri Morouche" />
+        <meta property="og:title" content="Expérience et Compétences de Nouri Morouche" />
+        <meta property="og:description" content="Mon parcours, mes compétences en développement web et les outils technologiques maîtrisés." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://nmoroucheportfolio.fr/experience" />
+        <meta property="og:image" content="https://nmoroucheportfolio.fr/images/experience-preview.png" />
       </Helmet>
 
-      <div className="card">
+      <section className="card">
         <h2>Expérience Professionnelle</h2>
-        <p>Stage en Développement Web - Insy2s</p>
-        <p>Date : novembre 2023 - février 2024</p>
-        <p>Travail sur un projet de développement web.</p>
-      </div>
+        <p><strong>Stage en Développement Web - Insy2s</strong></p>
+        <p><em>novembre 2023 - février 2024</em></p>
+        <p>Travail sur un projet de développement web avec des technologies modernes.</p>
+      </section>
 
-      <div className="card">
+      <section className="card">
         <h2>Formation</h2>
-        <p>Titre Professionnel de Développeur Web et Web Mobile</p>
-        <p>Date : 2022 - 2023</p>
-        <p>Institut : AFCI</p>
-        <p>Juin 2023 - titre pro développeur web et web mobile, AFCI-LIEVIN</p>
-        <p>Mars/Avril 2022 - MS Développement d'application, Afpa-ROUBAIX</p>
-        <p>Novembre 2022 - Incubateur nurserie, m2i à distance</p>
-      </div>
+        <ul className="formation-content">
+          <li><strong>Titre Professionnel Développeur Web et Web Mobile</strong> - AFCI (2022 - 2023)</li>
+          <li><strong>Développement d'applications</strong> - Afpa-ROUBAIX (mars/avril 2022)</li>
+          <li><strong>Incubateur Nurserie</strong> - M2i à distance (novembre 2022)</li>
+        </ul>
+      </section>
 
-      <div className="card">
+      <section className="card">
         <h2>Technologies et Outils Maîtrisés</h2>
-        <div className="tech-section">
+        <article className="tech-section">
           <h3>Langages et Technologies</h3>
           <div className="tech-icons">
-            <FaHtml5 className="tech-icon" title="HTML5" />
-            <FaCss3Alt className="tech-icon" title="CSS3" />
-            <FaJs className="tech-icon" title="JavaScript" />
+            <FaHtml5 className="tech-icon" title="HTML5" aria-label="HTML5" />
+            <FaCss3Alt className="tech-icon" title="CSS3" aria-label="CSS3" />
+            <FaJs className="tech-icon" title="JavaScript" aria-label="JavaScript" />
           </div>
-        </div>
-        <div className="tech-section">
+        </article>
+        <article className="tech-section">
           <h3>Frameworks</h3>
           <div className="tech-icons">
-            <FaReact className="tech-icon" title="React" />
-            <FaSymfony className="tech-icon" title="Symfony" />
+            <FaReact className="tech-icon" title="React" aria-label="React" />
+            <FaSymfony className="tech-icon" title="Symfony" aria-label="Symfony" />
           </div>
-        </div>
-        <div className="tech-section">
+        </article>
+        <article className="tech-section">
           <h3>Bibliothèques</h3>
           <div className="tech-icons">
-            <FaNodeJs className="tech-icon" title="Node.js" />
-            <SiExpress className="tech-icon" title="Express.js" />
-            <SiAxios className="tech-icon" title="Axios" />
+            <FaNodeJs className="tech-icon" title="Node.js" aria-label="Node.js" />
+            <SiExpress className="tech-icon" title="Express.js" aria-label="Express.js" />
+            <SiAxios className="tech-icon" title="Axios" aria-label="Axios" />
           </div>
-        </div>
-        <div className="tech-section">
+        </article>
+        <article className="tech-section">
           <h3>Bases de Données</h3>
           <div className="tech-icons">
-            <SiMysql className="tech-icon" title="MySQL" />
-            <SiPostgresql className="tech-icon" title="PostgreSQL" />
+            <SiMysql className="tech-icon" title="MySQL" aria-label="MySQL" />
+            <SiPostgresql className="tech-icon" title="PostgreSQL" aria-label="PostgreSQL" />
           </div>
-        </div>
-        <div className="tech-section">
+        </article>
+        <article className="tech-section">
           <h3>Outils</h3>
           <div className="tech-icons">
-            <FaFigma className="tech-icon" title="Figma" />
-            <SiJira className="tech-icon" title="Jira" />
-            <SiVisualstudiocode className="tech-icon" title="Visual Studio Code" />
-            <FaGitAlt className="tech-icon" title="GitHub" />
+            <FaFigma className="tech-icon" title="Figma" aria-label="Figma" />
+            <SiJira className="tech-icon" title="Jira" aria-label="Jira" />
+            <SiVisualstudiocode className="tech-icon" title="Visual Studio Code" aria-label="Visual Studio Code" />
+            <FaGitAlt className="tech-icon" title="GitHub" aria-label="GitHub" />
           </div>
-        </div>
-      </div>
-    </div>
+        </article>
+      </section>
+    </main>
   );
 }
 

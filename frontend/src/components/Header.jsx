@@ -1,33 +1,33 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../image/nouri-morouche_comp.webp';
-import logoSecours from '../image/nouri morouche.png'; // Image de secours
+import logoSecours from '../image/nouri morouche.png';
 import '../Styles/Header.css';
 
 function Header() {
-  const [menuActive, setMenuActive] = useState(false);
-  const [logoSrc, setLogoSrc] = useState(logo);
+  const [menuActive, setMenuActive] = useState(false); // État pour le menu burger
+  const [logoSrc, setLogoSrc] = useState(logo); // Gestion du logo principal ou secours
 
   const toggleMenu = () => {
-    setMenuActive(!menuActive);
+    setMenuActive(!menuActive); // Inverse l'état actif/inactif du menu
   };
 
   const closeMenu = () => {
-    setMenuActive(false);
+    setMenuActive(false); // Ferme le menu
   };
 
   const handleImageError = () => {
-    setLogoSrc(logoSecours); // Image de secours si l'image principale échoue
+    setLogoSrc(logoSecours); // Utiliser l'image de secours si l'image principale échoue
   };
 
   return (
     <header className={`header-container ${menuActive ? 'menu-active' : ''}`}>
       <div className="logo-container">
         <Link to="/" onClick={closeMenu}>
-          <img 
-            src={logoSrc} 
-            alt="Logo du site" 
-            className="logo" 
+          <img
+            src={logoSrc}
+            alt="Logo du site"
+            className="logo"
             onError={handleImageError}
           />
         </Link>
@@ -51,4 +51,3 @@ function Header() {
 }
 
 export default Header;
-

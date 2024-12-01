@@ -1,42 +1,83 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../Styles/LandingPage.css";
-import { Helmet } from 'react-helmet';
+
+// Import des images
+import apercuProjet from "../image/aperçu service-comp.png";
+import apercuService from "../image/aperçu service-comp.png";
+import apercuContact from "../image/aperçu contacts-com.png";
 
 
-      <Helmet>
-        <title>Bienvenue sur mon Portfolio</title>
-        <meta name="description" content="Explorez mes projets, services et expertise en développement web." />
-        <meta property="og:title" content="Bienvenue sur mon Portfolio" />
-        <meta property="og:description" content="Explorez mes projets, services et expertise en développement web." />
-        <meta property="og:url" content="https://nmoroucheportfolio.fr/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/portfolio-thumbnail.png" />
-        <link rel="canonical" href="https://nmoroucheportfolio.fr/" />
-      </Helmet>
 
 function LandingPage() {
+  const [preview, setPreview] = useState(null);
+
+  const handlePreview = (image) => {
+    setPreview(image);
+  };
+
+  const handleClosePreview = () => {
+    setPreview(null);
+  };
+
   return (
     <div className="landing-container">
       <h1 className="landing-title">Bienvenue sur Mon Portfolio</h1>
       <h2 className="intro-subtitle">
-        Découvrez mes projets, mon parcours et mon expertise en développement web.
+        Découvrez mes projets, services et expertise en développement web.
       </h2>
-      <div className="section-card">
-        <h2>Mes Projets</h2>
-        <p>Explorez mes projets pour voir ce que j'ai réalisé.</p>
-        <Link to="/projects" className="landing-link">Voir les Projets</Link>
+
+      <div className="cards-container">
+        <div className="card">
+          <div className="icon">💻</div>
+          <h3>Mes Projets</h3>
+          <p>
+            Découvrez mes compétences en React, Tailwind et MySQL. Explorez mes
+            réalisations qui mettent en valeur mon savoir-faire.
+          </p>
+          <button onClick={() => handlePreview(apercuProjet)}>Aperçu</button>
+          <Link to="/projects" className="button-link">
+            En savoir plus
+          </Link>
+        </div>
+
+        <div className="card">
+          <div className="icon">🔧</div>
+          <h3>Services</h3>
+          <p>
+            Découvrez les services que je propose pour vos projets web modernes
+            et interactifs.
+          </p>
+          <button onClick={() => handlePreview(apercuService)}>Aperçu</button>
+          <Link to="/services" className="button-link">
+            Voir les Services
+          </Link>
+        </div>
+
+        <div className="card">
+          <div className="icon">📧</div>
+          <h3>Me Contacter</h3>
+          <p>
+            N'hésitez pas à me contacter pour discuter de vos idées ou besoins.
+          </p>
+          <button onClick={() => handlePreview(apercuContact)}>Aperçu</button>
+          <Link to="/contact" className="button-link">
+            Me Contacter
+          </Link>
+        </div>
       </div>
-      <div className="section-card">
-        <h2>Services</h2>
-        <p>Découvrez les services que je propose, tels que le développement web, la création d'applications, et plus encore.</p>
-        <Link to="/services" className="landing-link">Voir les Services</Link>
-      </div>
-      <div className="section-card">
-        <h2>Contactez-moi</h2>
-        <p>N'hésitez pas à me contacter pour toute question ou projet.</p>
-        <Link to="/contact" className="landing-link">Me Contacter</Link>
-      </div>
+
+      {/* Modale pour l'aperçu */}
+      {preview && (
+        <div className="preview-modal" onClick={handleClosePreview}>
+          <div className="preview-content">
+            <img src={preview} alt="Aperçu" />
+            <button className="close-button" onClick={handleClosePreview}>
+              Fermer
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,72 +1,126 @@
-import React from 'react';
-import { FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
+import React from "react";
 import "../Styles/Project.css";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
+import projectImage1 from "../image/gestionnaire_des_tache_comp.webp";
+import projectImage2 from "../image/portfolio.webp"; // Image du portfolio actuel
+import projectPlaceholder from "../image/placeholder.webp"; // Placeholder générique pour les projets en cours
 
-import projectImage1 from '../image/gestionnaire_des_tache_comp.webp'; 
+const projects = [
+  {
+    id: 1,
+    title: "Portfolio Actuel - Nouri Morouche",
+    description:
+      "Ce site est conçu pour mettre en avant mes compétences et mes projets dans le développement web. Il est optimisé pour offrir une navigation fluide et un design moderne.",
+    features: [
+      "React pour une interface utilisateur dynamique",
+      "SEO optimisé pour une meilleure visibilité",
+      "Design responsive avec CSS pour tous les appareils",
+    ],
+    technologies: ["React.js", "Tailwind CSS", "MySQL"],
+    image: projectImage2,
+    link: "https://github.com/nouri50/portfoliov2", // Lien GitHub pour le portfolio
+  },
+  {
+    id: 2,
+    title: "Nouvelle Version de Portfolio (en cours)",
+    description:
+      "Une version avancée de mon portfolio actuel, utilisant Next.js pour une meilleure performance et Tailwind CSS pour un design plus moderne.",
+    features: [
+      "Rendu côté serveur avec Next.js pour des performances optimales",
+      "UI améliorée grâce à Tailwind CSS",
+      "Conception axée sur une expérience utilisateur optimale",
+    ],
+    technologies: ["Next.js", "Tailwind CSS"],
+    image: projectPlaceholder,
+    link: null, // Lien GitHub pas encore disponible
+  },
+  {
+    id: 3,
+    title: "Projet Gestionnaire de Tâches",
+    description:
+      "Un gestionnaire de tâches permettant la création, la modification et la suppression de tâches.",
+    features: [
+      "React pour l'interface utilisateur",
+      "Node.js et Express pour le back-end",
+      "MySQL pour la base de données",
+    ],
+    technologies: ["React.js", "Node.js", "MySQL"],
+    image: projectImage1,
+    link: "https://github.com/nouri50/GESTIONNAIRE-de-tache-",
+  },
+  {
+    id: 4,
+    title: "Projet Site Web Auto-école (en conception)",
+    description:
+      "Un site interactif conçu pour simplifier la gestion des services et des inscriptions pour une auto-école. Il permet de gérer efficacement les dossiers des élèves et les inscriptions.",
+    features: [
+      "Phase de conception en cours",
+      "Gestion des utilisateurs et des dossiers des élèves",
+      "Système d'inscription simplifié pour les élèves",
+    ],
+    technologies: ["React.js", "Node.js", "MySQL"],
+    image: projectPlaceholder,
+    link: null, // Lien GitHub pas encore disponible
+  },
+];
 
-
+function Projects() {
+  return (
+    <>
       <Helmet>
         <title>Mes Projets - Portfolio</title>
-        <meta name="description" content="Découvrez mes projets en développement web et applications." />
+        <meta
+          name="description"
+          content="Découvrez mes projets en développement web, incluant un gestionnaire de tâches, un site pour une auto-école, et mon portfolio."
+        />
         <meta property="og:title" content="Mes Projets - Portfolio" />
-        <meta property="og:description" content="Découvrez mes projets en développement web et applications." />
-        <meta property="og:url" content="https://nmoroucheportfolio.fr/projects" />
+        <meta
+          property="og:description"
+          content="Une collection de projets démontrant mes compétences en React, Node.js, et bien plus."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/images/portfolio-thumbnail.png" />
         <link rel="canonical" href="https://nmoroucheportfolio.fr/projects" />
       </Helmet>
-
-function Project() {
-  return (
-    <div className="content">
-      {/* Carte pour le projet de gestionnaire de tâches */}
-      <div className="project-card project-card-gestionnaire">
-        <div className="project-image">
-          <img src={projectImage1} alt="Projet Gestionnaire de Tâches" />
-        </div>
-        <div className="project-details">
-          <h2>Projet Gestionnaire de Tâches</h2>
-          <p>Ce projet est un gestionnaire de tâches permettant la création, la modification, et la suppression de tâches. Développé avec les technologies suivantes :</p>
-          <ul className="tech-list">
-            <li>
-              <FaReact className="tech-icon" /> React pour l'interface utilisateur
-            </li>
-            <li>
-              <FaNodeJs className="tech-icon" /> Node.js et Express pour le back-end
-            </li>
-            <li>
-              <FaDatabase className="tech-icon" /> MySQL pour la base de données
-            </li>
-          </ul>
-          <a href="https://github.com/nouri50/GESTIONNAIRE-de-tache-" target="_blank" rel="noopener noreferrer" className="project-link">Voir sur GitHub</a>
-        </div>
-      </div>
-
-      {/* Carte pour le projet en développement */}
-      <div className="project-card project-card-autoecole">
-        <div className="project-image-placeholder">
-          <p>Image à venir</p>
-        </div>
-        <div className="project-details">
-          <h2>Projet Site Web Auto-école</h2>
-          <p>Ce projet est prévu pour être un site web destiné à une auto-école, permettant de présenter les services, de gérer les inscriptions en ligne et de fournir des ressources aux élèves.</p>
-          <ul className="tech-list">
-            <li>
-              <FaReact className="tech-icon" /> React pour le front-end
-            </li>
-            <li>
-              <FaNodeJs className="tech-icon" /> Node.js pour le back-end
-            </li>
-            <li>
-              <FaDatabase className="tech-icon" /> MySQL pour la base de données
-            </li>
-          </ul>
-          <p className="project-link">Lien GitHub à venir</p>
+      <div className="projects-container">
+        <h2 className="section-title">Mes Projets</h2>
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <div key={project.id} className="project-card">
+              <div className="project-image">
+                <img src={project.image} alt={`Projet ${project.title}`} />
+              </div>
+              <div className="project-content">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+                <ul className="project-features">
+                  {project.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+                <p className="project-technologies">
+                  <strong>Technologies utilisées :</strong>{" "}
+                  {project.technologies.join(", ")}
+                </p>
+                {project.link ? (
+                  <a
+                    href={project.link}
+                    className="project-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Voir sur GitHub
+                  </a>
+                ) : (
+                  <p className="project-link-disabled">Lien GitHub à venir</p>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
-export default Project;
+export default Projects;

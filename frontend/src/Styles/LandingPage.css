@@ -1,94 +1,196 @@
+/* Corps de la page */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+}
+
+/* Conteneur principal */
 .landing-container {
-  padding: 50px 20px;
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  padding: 20px;
+  text-align: center;
 }
 
 .landing-title {
-  font-size: 3rem;
-  color: whitesmoke;
-  text-align: center;
+  font-size: 2.5rem;
   margin-bottom: 20px;
-  padding: 20px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-  letter-spacing: 1px;
-  transition: color 0.3s, text-shadow 0.3s;
-
-
 }
 
 .intro-subtitle {
-  font-size: 2rem;
-  color: whitesmoke;
-  text-align: center;
-  margin-bottom: 20px;
-  padding: 20px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-  letter-spacing: 1px;
-  transition: color 0.3s, text-shadow 0.3s;
-
-
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
-.section-card {
-  background-color:rgba(0, 0, 0, 0.6);
-  padding: 50px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-
-
 }
 
-.section-card h2 {
-  color: whitesmoke;
-  margin-bottom: 20px;
+.card {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
   font-size: 3rem;
-  transition: color 0.3s;
-  transition: text-shadow 0.3s;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-}
-
-.section-card p {
-  color: whitesmoke;
   margin-bottom: 10px;
-  font-size: 1.4rem;
-  transition: color 0.3s;
-  transition: text-shadow 0.3s;
-
-
 }
 
-.landing-link {
-  display: inline-block;
-  margin-top: 20px;
-  color: #007bff;
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.button-link,
+.card button {
+  background: #007bff;
+  color: white;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-  transition: text-shadow 0.3s;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-  cursor: pointer;
-  text-transform: uppercase;
-  padding: 10px 10px;
-  background-color: whitesmoke;
+  padding: 10px 20px;
+  border: none;
   border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, box-shadow 0.3s;
-
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  cursor: pointer;
 }
 
-.landing-link:hover {
-  color: #0056b3;
-  background-color: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, box-shadow 0.3s;
+.button-link:hover,
+.card button:hover {
+  background: #0056b3;
+}
+
+/* Modale */
+.preview-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.preview-content {
+  background-color: white;
+  padding: 10px;
+  max-width: 90%;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Image dans le modal */
+.preview-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease; /* Animation pour le zoom */
+}
+
+/* Zoom sur l'image au survol */
+.preview-content img:hover {
+  transform: scale(1.2); /* Zoom à 120% */
+}
+
+/* Bouton de fermeture */
+.close-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 1100;
+}
+
+.close-button:hover {
+  background: #ff4d4d;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .preview-content {
+    max-width: 85%;
+  }
+
+  .close-button {
+    font-size: 0.9rem;
+    padding: 8px;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .preview-content img:hover {
+    transform: scale(1.1); /* Réduction du zoom sur mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-title {
+    font-size: 2rem;
+  }
+
+  .intro-subtitle {
+    font-size: 1rem;
+  }
+
+  .card h3 {
+    font-size: 1.3rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .button-link,
+  .card button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  .close-button {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
 }

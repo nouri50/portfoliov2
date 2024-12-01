@@ -4,6 +4,27 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Filtrage des warnings et erreurs spécifiques en mode développement
+if (window.location.hostname === "localhost") {
+  const originalWarn = console.warn;
+  const originalError = console.error;
+
+  console.warn = (message) => {
+    if (!message.includes("UNSAFE_")) { // Ignorez les warnings spécifiques comme UNSAFE_ lifecycles
+      originalWarn(message);
+    }
+  };
+
+  console.error = (message) => {
+    if (!message.includes("Google Tag Manager")) { // Ignorez les erreurs liées à Google Tag Manager
+      originalError(message);
+    }
+  };
+
+  console.log("Warnings et erreurs filtrés en mode développement !");
+}
+
+// Création de la racine de l'application
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -11,7 +32,5 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Mesure des performances (optionnel)
 reportWebVitals();
