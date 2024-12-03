@@ -1,9 +1,31 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import '../Styles/mes-service.css';
 
 function Services() {
   return (
     <div className="services-container">
+      <Helmet>
+        <title>Services - Portfolio Nouri Morouche</title>
+        <meta
+          name="description"
+          content="Découvrez les services proposés par Nouri Morouche : développement web, applications sur mesure, optimisation SEO et support technique."
+        />
+        <meta
+          name="keywords"
+          content="services développement web, applications web, SEO, support technique, React, Node.js, MySQL"
+        />
+        <meta name="author" content="Nouri Morouche" />
+        <meta property="og:title" content="Services de Nouri Morouche" />
+        <meta
+          property="og:description"
+          content="Découvrez les services proposés pour répondre à vos besoins en développement web et optimiser votre présence en ligne."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://nmoroucheportfolio.fr/services" />
+        <meta property="og:image" content="https://nmoroucheportfolio.fr/images/services-thumbnail.png" />
+        <link rel="canonical" href="https://nmoroucheportfolio.fr/services" />
+      </Helmet>
       <h1 className="services-title">MES SERVICES</h1>
       <div className="services-list">
         {/* Développement Web */}
@@ -12,7 +34,7 @@ function Services() {
           <p>
             Je conçois des sites web modernes, sur mesure, et optimisés pour offrir des performances élevées. Grâce aux technologies avancées comme <strong>React</strong>, <strong>HTML</strong>, et <strong>CSS</strong>, je crée des interfaces engageantes et intuitives qui captivent vos utilisateurs. Que vous ayez besoin d’un site vitrine ou d’une plateforme interactive, je m’assure qu’il soit fonctionnel, esthétique et adapté à vos besoins.
           </p>
-          <p> Prenez les devants Faites de votre site web un outil puissant pour votre activité.</p>
+          <p>Prenez les devants. Faites de votre site web un outil puissant pour votre activité.</p>
         </div>
 
         {/* Développement d'Applications */}

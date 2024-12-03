@@ -1,9 +1,9 @@
 import React from "react";
 import "../Styles/Project.css";
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet-async';
 import projectImage1 from "../image/gestionnaire_des_tache_comp.webp";
-import projectImage2 from "../image/portfolio.webp"; // Image du portfolio actuel
-import projectPlaceholder from "../image/placeholder.webp"; // Placeholder générique pour les projets en cours
+import projectImage2 from "../image/portfolio.webp";
+import projectPlaceholder from "../image/placeholder.webp";
 
 const projects = [
   {
@@ -18,7 +18,7 @@ const projects = [
     ],
     technologies: ["React.js", "Tailwind CSS", "MySQL"],
     image: projectImage2,
-    link: "https://github.com/nouri50/portfoliov2", // Lien GitHub pour le portfolio
+    link: "https://github.com/nouri50/portfoliov2",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const projects = [
     ],
     technologies: ["Next.js", "Tailwind CSS"],
     image: projectPlaceholder,
-    link: null, // Lien GitHub pas encore disponible
+    link: null,
   },
   {
     id: 3,
@@ -60,7 +60,7 @@ const projects = [
     ],
     technologies: ["React.js", "Node.js", "MySQL"],
     image: projectPlaceholder,
-    link: null, // Lien GitHub pas encore disponible
+    link: null,
   },
 ];
 
@@ -79,19 +79,25 @@ function Projects() {
           content="Une collection de projets démontrant mes compétences en React, Node.js, et bien plus."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/portfolio-thumbnail.png" />
+        <meta
+          property="og:image"
+          content="https://nmoroucheportfolio.fr/images/portfolio-thumbnail.png"
+        />
         <link rel="canonical" href="https://nmoroucheportfolio.fr/projects" />
       </Helmet>
       <div className="projects-container">
-        <h2 className="section-title">Mes Projets</h2>
+        <h1 className="section-title">Mes Projets</h1>
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
               <div className="project-image">
-                <img src={project.image} alt={`Projet ${project.title}`} />
+                <img
+                  src={project.image}
+                  alt={`Illustration du projet ${project.title}`}
+                />
               </div>
               <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
+                <h2 className="project-title">{project.title}</h2>
                 <p className="project-description">{project.description}</p>
                 <ul className="project-features">
                   {project.features.map((feature, index) => (
@@ -124,3 +130,4 @@ function Projects() {
 }
 
 export default Projects;
+

@@ -1,16 +1,14 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import "../Styles/ScrollToTop.css";
 
-function ScrollToTop() {
+const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.scrollTo) {
-      window.scrollTo(0, 0);
-    }
+    window.scrollTo(0, 0); // Remonte en haut à chaque changement de route
   }, [pathname]);
 
-}
+  return null;
+};
 
 export default ScrollToTop;

@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaExclamationTriangle } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 import '../Styles/NotFound.css';
-import { Helmet } from 'react-helmet';
 
+function NotFound() {
+  return (
+    <>
       <Helmet>
         <title>Page Introuvable - Portfolio</title>
         <meta name="description" content="La page que vous recherchez est introuvable." />
@@ -15,16 +18,15 @@ import { Helmet } from 'react-helmet';
         <link rel="canonical" href="https://nmoroucheportfolio.fr/404" />
       </Helmet>
 
-function NotFound() {
-  return (
-    <div className="not-found-container">
-      <div className="not-found-header">
-        <FaExclamationTriangle className="warning-icon" />
-        <h1>404 - Page non trouvée</h1>
+      <div className="not-found-container">
+        <div className="not-found-header">
+          <FaExclamationTriangle className="warning-icon" />
+          <h1>404 - Page non trouvée</h1>
+        </div>
+        <p>La page que vous recherchez n'existe pas.</p>
+        <Link to="/">Retour à l'accueil</Link>
       </div>
-      <p>La page que vous recherchez n'existe pas.</p>
-      <Link to="/">Retour à l'accueil</Link>
-    </div>
+    </>
   );
 }
 

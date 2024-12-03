@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet'; 
+import { Helmet } from 'react-helmet-async';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaSymfony, FaNodeJs, FaFigma, FaGitAlt } from 'react-icons/fa';
 import { SiPostgresql, SiExpress, SiAxios, SiVisualstudiocode, SiJira, SiMysql } from 'react-icons/si';
 import "../Styles/Experience.css";
@@ -23,6 +23,7 @@ function Experience() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://nmoroucheportfolio.fr/experience" />
         <meta property="og:image" content="https://nmoroucheportfolio.fr/images/experience-preview.png" />
+        <link rel="canonical" href="https://nmoroucheportfolio.fr/experience" />
       </Helmet>
 
       <section className="card">

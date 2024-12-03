@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../Styles/contact.css"
+import { Helmet } from 'react-helmet-async';
+import "../Styles/contact.css";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -15,13 +16,17 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Construire le lien mailto avec les informations du formulaire
     const mailtoLink = `mailto:nourimorouche@sfr.fr?subject=Contact depuis le portfolio&body=Nom: ${formData.name}%0AEmail: ${formData.email}%0A%0AMessage:%0A${formData.message}`;
     window.location.href = mailtoLink;
   };
 
   return (
     <div className="contact-container">
+      <Helmet>
+        <title>Contactez-moi - Nouri Morouche</title>
+        <meta name="description" content="Contactez-moi via ce formulaire pour toute question ou collaboration en développement web." />
+        <link rel="canonical" href="https://nmoroucheportfolio.fr/contact" />
+      </Helmet>
       <h1>Contactez-moi</h1>
       <form className="contact-form" onSubmit={handleSubmit}>
         <label htmlFor="name">Nom :</label>
@@ -33,7 +38,6 @@ function Contact() {
           onChange={handleChange}
           required
         />
-
         <label htmlFor="email">Email :</label>
         <input
           type="email"
@@ -43,7 +47,6 @@ function Contact() {
           onChange={handleChange}
           required
         />
-
         <label htmlFor="message">Message :</label>
         <textarea
           id="message"
@@ -52,7 +55,6 @@ function Contact() {
           onChange={handleChange}
           required
         ></textarea>
-
         <button type="submit">Envoyer</button>
       </form>
     </div>
