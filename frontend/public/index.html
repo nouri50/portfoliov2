@@ -1,17 +1,20 @@
 <!doctype html>
 <html lang="fr">
   <head>
+    <!-- Caractères et viewport -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    
+    <!-- SEO de base -->
     <meta name="description" content="Portfolio de Nouri Morouche, développeur web. Découvrez mes projets, compétences, et parcours professionnel." />
     <meta name="keywords" content="Nouri Morouche, développeur web, portfolio, compétences, projets, React, Node.js, Symfony, MySQL" />
     <meta name="author" content="Nouri Morouche" />
     
-    <!-- Balises Open Graph pour Facebook/LinkedIn -->
+    <!-- Open Graph pour les réseaux sociaux -->
     <meta property="og:title" content="Portfolio de Nouri Morouche - Développeur Web" />
     <meta property="og:description" content="Découvrez les projets et compétences de Nouri Morouche, développeur web." />
-    <meta property="og:image" content="https://nmoroucheportfolio.fr/images/portfolio-thumbnail.png" />
+    <meta property="og:image" content="/portfolio-thumbnail.png" />
     <meta property="og:url" content="https://nmoroucheportfolio.fr" />
     <meta property="og:type" content="website" />
 
@@ -19,10 +22,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Portfolio de Nouri Morouche - Développeur Web" />
     <meta name="twitter:description" content="Découvrez les projets et compétences de Nouri Morouche, développeur web." />
-    <meta name="twitter:image" content="https://nmoroucheportfolio.fr/images/portfolio-thumbnail.png" />
+    <meta name="twitter:image" content="/portfolio-thumbnail.png" />
 
+    <!-- Titre de la page -->
     <title>Nouri Morouche - Portfolio</title>
-    
+
     <!-- Icônes -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -30,9 +34,15 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- Polices et CSS -->
+    <!-- Polices Google -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
-    <link href="/static/css/main.0ae21655.css" rel="stylesheet" />
+
+    <!-- CSS principal -->
+    <link href="/static/css/main.css" rel="stylesheet" />
+
+    <!-- Préchargement des ressources critiques -->
+    <link rel="preload" href="/static/css/main.css" as="style" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="font" type="font/woff2" crossorigin="anonymous" />
 
     <!-- Google Tag Manager -->
     <script>
@@ -49,8 +59,20 @@
     </script>
     <!-- End Google Tag Manager -->
 
-    <!-- JavaScript -->
-    
+    <!-- Données structurées (Schema.org) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Nouri Morouche",
+        "url": "https://nmoroucheportfolio.fr",
+        "jobTitle": "Développeur Web",
+        "sameAs": [
+          "https://www.linkedin.com/in/nouri-morouche",
+          "https://github.com/nourimr"
+        ]
+      }
+    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -59,7 +81,13 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Alerte JavaScript désactivé -->
     <noscript>Vous devez activer JavaScript pour utiliser cette application.</noscript>
+
+    <!-- Conteneur principal de l'application -->
     <div id="root"></div>
+
+  
+   
   </body>
 </html>

@@ -1,40 +1,105 @@
-/* Styles pour le footer */
-.footer-container {
-  background-color: #121212; /* Même couleur que le header */
-  color: #ffffff;
-  padding: 20px;
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #80deea);
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* Container for sections */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+/* Section Titles */
+h2 {
   text-align: center;
-  font-size: 14px;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #005b96;
 }
 
-.footer-container .rights {
-  margin-bottom: 10px;
-  font-size: 13px;
-  color: #bbbbbb;
+/* Buttons */
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background: #005b96;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
 }
 
-.footer-links {
+.cta-button:hover {
+  background: #003f69;
+}
+
+/* Animation Styles */
+[data-aos] {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-aos][data-aos][data-aos-ready="true"] {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+/* Popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
-  gap: 15px; /* Espacement entre les liens */
-  flex-wrap: wrap; /* Permet de gérer les petits écrans */
-}
-
-.footer-link {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 14px;
-  display: flex;
   align-items: center;
-  gap: 5px; /* Espacement entre les icônes et le texte */
-  transition: color 0.3s ease;
+  z-index: 1000;
 }
 
-.footer-link:hover {
-  color: #ff4081; /* Couleur au survol, identique au header */
+/* Popup content */
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
-.footer-link svg {
-  font-size: 18px; /* Taille des icônes */
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.popup-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.popup-content h3 {
+  font-size: 1.5rem;
+  color: #0078D4;
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  font-size: 1rem;
+  color: #555;
 }

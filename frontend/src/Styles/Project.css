@@ -1,26 +1,21 @@
+/* Projets section */
+.projects-section {
+  background: linear-gradient(135deg, #f9e4ff, #e0d6ff);
+  color: #333;
+  padding: 4rem 2rem;
+}
+
 .projects-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-
-}
-
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color:beige;
-  
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .project-card {
-  background: #fff;
+  width: 300px;
+  background-color: white;
+  border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -28,147 +23,12 @@
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.project-image img {
+.project-card img {
   width: 100%;
-  height: auto;
-}
-
-.project-content {
-  padding: 15px;
-}
-
-.project-title {
-  font-size: 1.5rem;
-  margin: 10px 0;
-  color: #007BFF;
-}
-
-.project-description {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.project-features {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0;
-  color: #333;
-}
-
-.project-features li {
-  margin-bottom: 5px;
-}
-
-.project-technologies {
-  font-size: 1rem;
-  color: #555;
-  margin: 10px 0;
-}
-
-.project-link {
-  display: inline-block;
-  padding: 10px 15px;
-  background: #007BFF;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-}
-
-.project-link:hover {
-  background: #0056b3;
-}
-
-.project-link-disabled {
-  color: #999;
-  font-style: italic;
-}
-/* Responsive pour les écrans moyens (tablettes) */
-@media (max-width: 1024px) {
-  .projects-grid {
-    grid-template-columns: 1fr; /* Une colonne pour les tablettes */
-    gap: 15px; /* Espacement réduit */
-  }
-
-  .project-card {
-    padding: 15px; /* Réduction du padding pour s'adapter aux tablettes */
-  }
-
-  .project-title {
-    font-size: 1.4rem; /* Ajustement de la taille du titre */
-  }
-
-  .project-description,
-  .project-technologies {
-    font-size: 0.9rem; /* Réduction de la taille du texte */
-  }
-
-  .project-link {
-    padding: 8px 12px; /* Boutons plus petits */
-    font-size: 0.9rem;
-  }
-}
-
-/* Responsive pour les petits écrans (mobiles) */
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr; /* Une colonne pour les mobiles */
-    gap: 10px; /* Espacement réduit */
-  }
-
-  .project-card {
-    margin-bottom: 15px; /* Ajout d'un espacement entre les cartes */
-    transform: none; /* Désactivation des effets de transformation */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre par défaut */
-  }
-
-  .project-card:hover {
-    transform: none; /* Supprime l'effet au survol sur mobile */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Conserve une ombre simple */
-  }
-
-  .project-title {
-    font-size: 1.2rem; /* Taille adaptée au mobile */
-  }
-
-  .project-description,
-  .project-technologies {
-    font-size: 0.85rem; /* Texte plus petit pour s'adapter à l'espace */
-  }
-
-  .project-link {
-    padding: 6px 10px; /* Réduction supplémentaire des boutons */
-    font-size: 0.85rem;
-  }
-}
-
-/* Responsive pour les très petits écrans (téléphones compacts) */
-@media (max-width: 480px) {
-  .projects-container {
-    padding: 10px; /* Padding minimal */
-  }
-
-  .project-card {
-    padding: 10px; /* Réduction du padding */
-    margin-bottom: 10px; /* Réduction de l'espacement entre les cartes */
-  }
-
-  .project-title {
-    font-size: 1rem; /* Réduction de la taille des titres */
-  }
-
-  .project-description,
-  .project-technologies {
-    font-size: 0.8rem; /* Texte réduit pour s'adapter à l'écran */
-  }
-
-  .project-link {
-    padding: 5px 8px; /* Boutons encore plus compacts */
-    font-size: 0.75rem;
-  }
+  height: 200px;
+  object-fit: cover;
 }

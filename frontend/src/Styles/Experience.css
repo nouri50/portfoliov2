@@ -1,166 +1,23 @@
-/* Conteneur principal pour le mode normal */
-.experience-container {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Trois colonnes */
-  gap: 20px; /* Espacement entre les cartes */
-  margin-bottom: 40px; /* Espace au-dessous des cartes */
-}
-
-/* Style général des cartes */
-.card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+/* Parcours section */
+.parcours {
+  background: linear-gradient(135deg, #fff7e6, #ffedd6);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour animation */
-  margin-bottom: 20px; /* Ajout d'espace vertical entre les cartes */
-}
-
-/* Effet au survol */
-.card:hover {
-  transform: translateY(-10px); /* Déplace légèrement la carte vers le haut */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Accentue l'ombre */
-}
-
-/* Titres des cartes */
-.card h2 {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
   color: #333;
 }
 
-/* Texte dans les cartes */
-.card p, .card ul {
-  color: #555;
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 15px;
-  text-align: justify;
-}
-
-/* Liste dans les cartes */
-.card ul {
-  padding-left: 20px;
-  list-style: disc;
-}
-
-.card ul li {
-  margin-bottom: 10px;
-}
-
-/* Section des technologies */
-.tech-section {
-  margin-top: 20px;
-}
-
-.tech-section h3 {
-  font-size: 1.4rem;
-  color: #333;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.tech-icons {
+.tech-logos {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
   justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
 }
 
-.tech-icon {
-  font-size: 2rem;
-  color: #007bff;
-  transition: color 0.3s, transform 0.3s;
+.tech-logos svg {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease;
 }
 
-.tech-icon:hover {
-  color: #0056b3;
+.tech-logos svg:hover {
   transform: scale(1.1);
-}
-
-/* Responsive pour les écrans moyens (tablettes) */
-@media (max-width: 1024px) {
-  .experience-container {
-    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
-    gap: 15px; /* Espacement réduit */
-    padding: 15px;
-  }
-
-  .card {
-    padding: 20px;
-    margin-bottom: 15px; /* Ajuste les marges pour les tablettes */
-  }
-
-  .card h2 {
-    font-size: 1.4rem;
-  }
-
-  .card p, .card ul {
-    font-size: 0.9rem;
-  }
-
-  .tech-icon {
-    font-size: 1.8rem;
-  }
-}
-
-/* Responsive pour les petits écrans (mobiles) */
-@media (max-width: 768px) {
-  .experience-container {
-    grid-template-columns: 1fr; /* Une seule colonne */
-    gap: 10px;
-    padding: 10px;
-  }
-
-  .card {
-    padding: 15px;
-    margin-bottom: 10px; /* Espace réduit entre les cartes */
-  }
-
-  .card h2 {
-    font-size: 1.2rem;
-  }
-
-  .card p, .card ul {
-    font-size: 0.85rem;
-  }
-
-  .tech-icons {
-    gap: 10px;
-  }
-
-  .tech-icon {
-    font-size: 1.6rem;
-  }
-}
-
-/* Responsive pour les très petits écrans (téléphones compacts) */
-@media (max-width: 480px) {
-  .experience-container {
-    padding: 5px;
-  }
-
-  .card {
-    padding: 10px;
-    margin-bottom: 8px; /* Marges ajustées */
-  }
-
-  .card h2 {
-    font-size: 1rem;
-  }
-
-  .card p, .card ul {
-    font-size: 0.8rem;
-  }
-
-  .tech-icon {
-    font-size: 1.4rem;
-  }
 }

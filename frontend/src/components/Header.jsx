@@ -1,50 +1,41 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../image/nouri-morouche_comp.webp';
-import logoSecours from '../image/nouri morouche.png';
-import '../Styles/Header.css';
+import React from "react";
+import { Link } from "react-scroll";
+import logo from "../image/nouri-morouche_comp.webp";
 
 function Header() {
-  const [menuActive, setMenuActive] = useState(false); // État pour le menu burger
-  const [logoSrc, setLogoSrc] = useState(logo); // Gestion du logo principal ou secours
-
-  const toggleMenu = () => {
-    setMenuActive(!menuActive); // Inverse l'état actif/inactif du menu
-  };
-
-  const closeMenu = () => {
-    setMenuActive(false); // Ferme le menu
-  };
-
-  const handleImageError = () => {
-    setLogoSrc(logoSecours); // Utiliser l'image de secours si l'image principale échoue
-  };
-
   return (
-    <header className={`header-container ${menuActive ? 'menu-active' : ''}`}>
-      <div className="logo-container">
-        <Link to="/" onClick={closeMenu}>
-          <img
-            src={logoSrc}
-            alt="Logo du site"
-            className="logo"
-            onError={handleImageError}
-          />
-        </Link>
-      </div>
-      <nav className={`nav-menu ${menuActive ? 'active' : ''}`}>
-        <ul>
-          <li><Link to="/" onClick={closeMenu}>Accueil</Link></li>
-          <li><Link to="/about" onClick={closeMenu}>À propos</Link></li>
-          <li><Link to="/projects" onClick={closeMenu}>Projets</Link></li>
-          <li><Link to="/experience" onClick={closeMenu}>Parcours</Link></li>
-          <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
-        </ul>
-      </nav>
-      <div className="burger-menu" onClick={toggleMenu}>
-        <div className={`line ${menuActive ? 'open' : ''}`}></div>
-        <div className={`line ${menuActive ? 'open' : ''}`}></div>
-        <div className={`line ${menuActive ? 'open' : ''}`}></div>
+    <header className="header">
+      <div className="header-container">
+        <img src={logo} alt="Logo" className="header-logo" />
+        <nav>
+          <ul className="header-nav">
+            <li>
+              <Link to="accueil" smooth={true} duration={500}>
+                Accueil
+              </Link>
+            </li>
+            <li>
+              <Link to="parcours" smooth={true} duration={500}>
+                Parcours
+              </Link>
+            </li>
+            <li>
+              <Link to="services" smooth={true} duration={500}>
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link to="projects" smooth={true} duration={500}>
+                Projets
+              </Link>
+            </li>
+            <li>
+              <Link to="contact" smooth={true} duration={500}>
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );

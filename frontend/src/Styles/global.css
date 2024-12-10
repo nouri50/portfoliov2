@@ -1,0 +1,488 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color:  #e8f1f8;
+  color:  #e8f1f8;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cta-button {
+  background-color: #40739e;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color:  #3b5998;
+}
+
+/* Header */
+.header {
+  background-color: #40739e;
+  padding: 20px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-logo {
+  width: 60px;
+  height: auto;
+}
+
+.header-nav {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.header-nav a {
+  color: #fff;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+  color:#c8d6e5;
+}
+
+/* Section Styles */
+.section {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2rem;
+  color: #40739e;
+  margin-bottom: 20px;
+}
+
+/* Landing Page */
+.section.landing-page {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #e8f1f8;
+}
+
+/* Image de profil */
+.landing-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  object-fit: cover;
+}
+
+/* Boutons sociaux */
+.social-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  color: white;
+}
+
+/* Couleurs spécifiques pour chaque réseau */
+.linkedin {
+  background-color: #0077b5;
+}
+
+.github {
+  background-color: #333;
+}
+
+.facebook {
+  background-color: #1877f2;
+}
+
+.share {
+  background-color: #40739e;
+}
+
+/* Hover effects */
+
+/* Couleurs spécifiques pour chaque réseau */
+.linkedin {
+  background-color: #0077b5;
+  color: white;
+}
+
+.linkedin:hover {
+  background-color: #005582;
+}
+
+.github {
+  background-color: #333333;
+  color: white;
+}
+
+.github:hover {
+  background-color: #1b1b1b;
+}
+
+.facebook {
+  background-color: #1877f2;
+  color: white;
+}
+
+.facebook:hover {
+  background-color: #145dbb;
+}
+
+.share {
+  background-color: #40739e;
+  color: white;
+}
+
+.share:hover {
+  background-color: #2b4e71;
+}
+
+/* Parcours Section */
+.parcours {
+  background-color: #e8f1f8; /* Fond doux */
+  padding: 50px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre pour la section */
+}
+
+.parcours-description {
+  font-size: 1.2rem;
+  color: #34495e; /* Couleur du texte */
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #ffffff; /* Fond blanc contrasté */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  animation: fadeInUp 1s ease-in-out; /* Animation d'apparition */
+}
+
+.parcours-description:hover {
+  background-color: #dfe6e9; /* Fond légèrement plus clair au survol */
+  color: #2c3e50; /* Texte plus sombre au survol */
+}
+
+.parcours-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.parcours-icons svg {
+  width: 50px; /* Taille augmentée des icônes */
+  height: 50px;
+  transition: transform 0.3s ease, color 0.3s ease; /* Effet au survol */
+}
+
+.parcours-icons svg:hover {
+  transform: scale(1.2); /* Agrandissement au survol */
+  color: #61dafb; /* Couleur modifiée pour React ou autre couleur */
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem; /* Texte légèrement plus grand */
+  color: #2c3e50;
+  animation: fadeIn 1.2s ease-in-out; /* Animation d'apparition */
+}
+
+.tech-item:hover {
+  color: #40739e; /* Couleur accentuée au survol */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* Services Section */
+.services {
+  background-color: #e8f1f8;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background-color: #e8f1f8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #555;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Projects Section */
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espacement entre les cartes */
+}
+
+.project-card {
+  width: 250px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+}
+
+.project-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.project-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.project-card .technologies {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 10px;
+}
+
+.project-card .click-to-view {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.technologies span {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.technologies span svg {
+  margin-right: 5px;
+  font-size: 1rem;
+  color: #555;
+}
+
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  color: #333;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #40739e;
+  font-weight: bold;
+}
+
+.popup-close:hover {
+  color: #ff4757;
+}
+
+.popup-image {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.popup-content h4 {
+  margin: 20px 0 10px;
+  color: #40739e;
+}
+
+.popup-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.popup-content ul li {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+
+
+/* Contact Section */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form .cta-button {
+  width: 100%;
+  font-size: 1rem;
+}
+ .footer {
+  background-color: blue;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer p {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* Media Queries */
+
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  animation: fadeInUp 1s ease both;
+}
+/* Styles pour l'animation fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}

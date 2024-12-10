@@ -1,78 +1,32 @@
-/* General Container */
-.services-container {
-  padding: 50px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+/* Services section */
+.services-section {
+  background: linear-gradient(135deg, #f8fff8, #d9f4d9);
+  color: #333;
   text-align: center;
 }
 
-/* Title */
-.services-title {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: bisque;
-}
-
-/* Service Cards */
-.services-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
+.services-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .service-card {
-  background: #fff;
+  background-color: white;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 20px;
+  padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
 
-.service-card h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: #0056b3;
-}
-
-.service-card p {
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  text-align: justify;
-}
-
-.service-card .call-to-action {
-  font-weight: bold;
+.service-card h3 {
   color: #007bff;
-  text-align: center;
-}
-/* Responsive Services Page */
-@media (max-width: 768px) {
-  .services-grid {
-    flex-direction: column; /* Les cartes s'empilent */
-    gap: 20px;
-  }
-
-  .service-card {
-    width: 100%;
-  }
-
-  .service-title {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .service-title {
-    font-size: 1.5rem;
-  }
-
-  .service-card p {
-    font-size: 0.9rem;
-  }
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }

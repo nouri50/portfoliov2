@@ -1,130 +1,38 @@
-/* Styles généraux pour le header */
-.header-container {
+.header {
+  background-color: #fff;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #121212; /* Couleur de fond du header */
-  color: #ffffff;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
+.header .logo {
+  width: 100px;
+  transition: transform 0.3s ease;
 }
 
-.logo {
-  width: 50px;
-  height: auto;
+.header .logo:hover {
+  transform: scale(1.1);
 }
 
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: 30px; /* Espacement entre les liens */
-}
-
-.nav-menu ul {
-  display: flex;
+.header nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  gap: 20px;
 }
 
-.nav-menu li {
+.header nav ul li {
   display: inline-block;
 }
 
-.nav-menu a {
+.nav-link {
   text-decoration: none;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 500;
+  color: #333;
+  font-size: 1rem;
   transition: color 0.3s ease;
-  padding: 5px 10px; /* Ajouter un peu d'espace autour du texte */
 }
 
-.nav-menu a:hover {
-  color: #ff4081; /* Couleur au survol */
-}
-
-/* Styles pour le menu burger */
-.burger-menu {
-  display: none; /* Cacher le menu burger en mode bureau */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-
-.burger-menu .line {
-  width: 100%;
-  height: 3px;
-  background-color: #ffffff;
-  margin: 3px 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.burger-menu .open:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-
-.burger-menu .open:nth-child(2) {
-  opacity: 0;
-}
-
-.burger-menu .open:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-
-/* Mode mobile */
-@media (max-width: 768px) {
-  .nav-menu {
-    display: none; /* Cacher le menu par défaut */
-    flex-direction: column;
-    background-color: #121212;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    padding: 20px 0;
-    z-index: 1000;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-  }
-
-  .nav-menu.active {
-    display: flex; /* Afficher le menu quand actif */
-  }
-
-  .burger-menu {
-    display: flex; /* Afficher le menu burger en mode mobile */
-  }
-
-  .nav-menu ul {
-    flex-direction: column;
-    gap: 15px; /* Espacement entre les liens */
-  }
-
-  .nav-menu a {
-    font-size: 18px;
-    font-weight: 500;
-  }
-}
-
-/* Mode bureau */
-@media (min-width: 768px) {
-  .nav-menu {
-    display: flex; /* Afficher le menu horizontalement */
-  }
-
-  .burger-menu {
-    display: none; /* Cacher le menu burger */
-  }
+.nav-link:hover {
+  color: #61dafb;
 }
