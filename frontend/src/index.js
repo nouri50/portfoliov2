@@ -1,9 +1,13 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom";
+import { HelmetProvider } from "react-helmet-async";
 import App from "./App";
-import '../src/components/animations';
 
-
-const container = document.getElementById("root");
-const root = createRoot(container);
-root.render(<App />);
+ReactDOM.render(
+  <HelmetProvider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </HelmetProvider>,
+  document.getElementById("root")
+);

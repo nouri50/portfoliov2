@@ -1,105 +1,145 @@
 import React, { useState } from "react";
-import projet1Image from "../image/gestionnaire_des_tache_comp.webp";
-import projet2Image from "../image/portfolio.webp";
-import projet3Image from "../image/work in progress.jpg";
-import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
+import { FaReact, FaNodeJs, FaDatabase, FaGithub, FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-function Projects() {
-  const [selectedProject, setSelectedProject] = useState(null);
+// Importation des images
+import project1Image from "../image/gestionnaire_des_tache_comp.webp";
+import project2Image from "../image/portfolio.webp";
+import project3Image from "../image/work_in_progress.jpg";
+
+const Projects = () => {
+  const [activeProject, setActiveProject] = useState(null);
+
+  const toggleDetails = (projectId) => {
+    setActiveProject(activeProject === projectId ? null : projectId);
+  };
 
   const projects = [
     {
       id: 1,
       title: "Gestionnaire de tâches",
-      description: "Application web pour gérer vos tâches quotidiennes.",
-      technologies: [
-        { name: "React", icon: <FaReact /> },
-        { name: "Node.js", icon: <FaNodeJs /> },
-        { name: "MySQL", icon: <FaDatabase /> },
-      ],
-      image: projet1Image,
+      description:
+        "Une application web performante pour organiser vos tâches quotidiennes. Développée avec React et Node.js.",
+      image: project1Image,
+      technologies: [<FaReact />, <FaNodeJs />, <FaDatabase />],
+      githubLink: "https://github.com/votre-utilisateur/gestionnaire-de-taches",
+      dateCreated: "2023-01-15",
     },
     {
       id: 2,
-      title: "Portfolio",
-      description: "Site vitrine personnel pour présenter mes compétences.",
-      technologies: [
-        { name: "React", icon: <FaReact /> },
-        { name: "CSS", icon: <FaNodeJs /> },
-        { name: "JavaScript", icon: <FaReact /> },
-      ],
-      image: projet2Image,
+      title: "1re Version Portfolio",
+      description:
+        "Un portfolio moderne et interactif pour présenter vos compétences et projets. Entièrement développé avec React.",
+      image: project2Image,
+      technologies: [<FaReact />],
+      githubLink: "https://github.com/votre-utilisateur/portfolio",
+      dateCreated: "2022-12-10",
     },
     {
       id: 3,
-      title: "Auto-école",
-      description: "Site en cours de développement pour une auto-école en ligne.",
-      technologies: [
-        { name: "React", icon: <FaReact /> },
-        { name: "CSS", icon: <FaNodeJs /> },
-        { name: "MySQL", icon: <FaDatabase /> },
-      ],
-      image: projet3Image,
+      title: "Blog Communautaire",
+      description:
+        "Un blog interactif pour publier et commenter des articles. Ce projet est en développement avec React, Node.js et MySQL.",
+      image: project3Image,
+      technologies: [<FaReact />, <FaNodeJs />, <FaDatabase />],
+      githubLink: null,
+      dateCreated: "2023-03-01",
     },
   ];
 
-  const openPopup = (project) => {
-    setSelectedProject(project);
-  };
-
-  const closePopup = () => {
-    setSelectedProject(null);
+  const jsonLD = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": projects.map((project, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": project.githubLink || "https://nmoroucheportfolio.fr",
+      "name": project.title,
+      "description": project.description,
+      "dateCreated": project.dateCreated,
+    })),
   };
 
   return (
-    <section id="projects" className="section projects fade-in">
-      <h2 className="section-title">Mes Projets</h2>
+    <section id="projects" className="projects-section">
+      {/* SEO via Helmet */}
+      <Helmet>
+        <title>Projets de Nouri Morouche</title>
+        <meta
+          name="description"
+          content="Découvrez les projets réalisés par Nouri Morouche, développeur web spécialisé en React, Node.js et MySQL."
+        />
+        <script type="application/ld+json">{JSON.stringify(jsonLD)}</script>
+      </Helmet>
+
+      <h2>Mes Projets</h2>
       <div className="projects-container">
         {projects.map((project) => (
-          <div
-            key={project.id}
-            className="project-card"
-            onClick={() => openPopup(project)}
-          >
-            <img src={project.image} alt={project.title} />
+          <div key={project.id} className="project-card">
+            {/* Image du projet */}
+            <img
+              src={project.image}
+              alt={`Capture d'écran de ${project.title}`}
+              className="project-image"
+            />
+
+            {/* Titre et description */}
             <h3>{project.title}</h3>
-            <div className="technologies">
-              {project.technologies.map((tech, index) => (
-                <span key={index}>
-                  {tech.icon} {tech.name}
-                </span>
-              ))}
+            <p>{project.description}</p>
+
+            {/* Icônes des technologies utilisées */}
+            <div className="technologies-icons">
+              <h4>Technologies utilisées :</h4>
+              <div className="icons">
+                {project.technologies.map((tech, index) => (
+                  <span key={index} className="icon">
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
+
+            {/* Bouton pour afficher/masquer les détails */}
+            <button
+              className={`details-button ${
+                activeProject === project.id ? "active" : ""
+              }`}
+              onClick={() => toggleDetails(project.id)}
+            >
+              {activeProject === project.id ? (
+                <>
+                  Masquer les détails <FaChevronUp />
+                </>
+              ) : (
+                <>
+                  Afficher les détails <FaChevronDown />
+                </>
+              )}
+            </button>
+
+            {/* Détails du projet */}
+            {activeProject === project.id && (
+              <div className="project-details">
+                <p>{project.description}</p>
+                {project.githubLink ? (
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="github-link"
+                  >
+                    <FaGithub /> Voir sur GitHub
+                  </a>
+                ) : (
+                  <p className="github-link">Dépôt GitHub à venir</p>
+                )}
+              </div>
+            )}
           </div>
         ))}
       </div>
-      {selectedProject && (
-        <div className="popup-overlay" onClick={closePopup}>
-          <div
-            className="popup-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button className="popup-close" onClick={closePopup}>
-              &times;
-            </button>
-            <img
-              className="popup-image"
-              src={selectedProject.image}
-              alt={selectedProject.title}
-            />
-            <h3>{selectedProject.title}</h3>
-            <p>{selectedProject.description}</p>
-            <h4>Technologies utilisées :</h4>
-            <ul>
-              {selectedProject.technologies.map((tech, index) => (
-                <li key={index}>{tech.name}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
     </section>
   );
-}
+};
 
 export default Projects;

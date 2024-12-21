@@ -1,6 +1,6 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaFacebook, FaShareAlt } from "react-icons/fa";
-import developerImage from "../image/photo-developpeur.jpg";
+import { FaFileDownload, FaLinkedin, FaGithub, FaFacebook, FaShareAlt } from "react-icons/fa";
+import profileImage from "../image/photo-developpeur.jpg"; // Chemin vers l'image de profil
 
 function LandingPage() {
   const handleShare = () => {
@@ -8,81 +8,72 @@ function LandingPage() {
       navigator
         .share({
           title: "Portfolio de Nouri Morouche",
-          text: "Découvrez les projets et compétences de Nouri Morouche, développeur web.",
+          text: "Découvrez mon portfolio de développeur web !",
           url: window.location.href,
         })
         .then(() => console.log("Partage réussi"))
-        .catch((error) => console.error("Erreur lors du partage :", error));
+        .catch((error) => console.error("Erreur de partage :", error));
     } else {
-      alert("Le partage n'est pas supporté sur ce navigateur.");
+      alert("La fonction de partage n'est pas prise en charge sur votre navigateur.");
     }
   };
 
   return (
-    <section id="accueil" className="section landing-page">
+    <section id="welcome" className="landing-page">
       <div className="landing-content">
-        {/* Image du développeur */}
-        <img
-          src={developerImage}
-          alt="Développeur Nouri Morouche"
-          className="landing-image"
-        />
+        {/* Image du profil */}
+        <img src={profileImage} alt="Nouri Morouche, développeur web" className="landing-image" />
 
         {/* Titre principal */}
         <h1 className="landing-title">Bienvenue sur mon portfolio</h1>
 
         {/* Description */}
         <p className="landing-description">
-          Je suis un développeur spécialisé dans la création de sites modernes
-          et performants.
+          Je suis un développeur passionné spécialisé dans la création de solutions digitales modernes et performantes.
+          Découvrez mes compétences, mes projets et mon expérience professionnelle.
         </p>
 
-        {/* CTA : Voir les projets */}
-        <a href="#projects" className="cta-button">
-          Voir mes projets
-        </a>
+        {/* Boutons CTA */}
+        <div className="cta-container">
+          <a
+            href="/assets/Cv de nouri-morouche développeur web et web mobile.pdf"
+            download="NouriMorouche_CV.pdf"
+            className="cta-button"
+          >
+            <FaFileDownload /> Télécharger mon CV
+          </a>
+          <a href="#projects" className="cta-link">
+            Voir mes projets
+          </a>
+        </div>
 
         {/* Boutons sociaux */}
         <div className="social-buttons">
-          {/* LinkedIn */}
           <a
-            href="https://www.linkedin.com/in/nouri-morouche-9a8237140/"
+            href="https://www.linkedin.com"
+            className="social-button linkedin"
             target="_blank"
             rel="noopener noreferrer"
-            className="social-button linkedin"
-            aria-label="Profil LinkedIn de Nouri Morouche"
           >
             <FaLinkedin />
           </a>
-
-          {/* GitHub */}
           <a
-            href="https://github.com/nouri50"
+            href="https://github.com"
+            className="social-button github"
             target="_blank"
             rel="noopener noreferrer"
-            className="social-button github"
-            aria-label="Profil GitHub de Nouri Morouche"
           >
             <FaGithub />
           </a>
-
-          {/* Facebook */}
           <a
-            href="https://www.facebook.com/profile.php?id=61569434236598"
+            href="https://www.facebook.com"
+            className="social-button facebook"
             target="_blank"
             rel="noopener noreferrer"
-            className="social-button facebook"
-            aria-label="Profil Facebook de Nouri Morouche"
           >
             <FaFacebook />
           </a>
-
-          {/* Partage */}
-          <button
-            onClick={handleShare}
-            className="social-button share"
-            aria-label="Partager ce portfolio"
-          >
+          <button className="social-button share" onClick={handleShare}>
             <FaShareAlt />
           </button>
         </div>
