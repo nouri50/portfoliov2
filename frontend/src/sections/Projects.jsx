@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet-async";
-import { FaReact, FaNodeJs, FaDatabase, FaGithub, FaChevronDown, FaChevronUp } from "react-icons/fa";
-
-// Importation des images
+import { FaGithub, FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
 import project1Image from "../image/gestionnaire_des_tache_comp.webp";
 import project2Image from "../image/portfolio.webp";
-import project3Image from "../image/work_in_progress.jpg";
+import project3Image from "../image/blog-communautaire.png";
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(null);
@@ -19,21 +16,19 @@ const Projects = () => {
       id: 1,
       title: "Gestionnaire de tâches",
       description:
-        "Une application web performante pour organiser vos tâches quotidiennes. Développée avec React et Node.js.",
+        "Une application performante pour organiser vos tâches quotidiennes. Développée avec React et Node.js.",
       image: project1Image,
+      githubLink: "https://github.com/nouri50/GESTIONNAIRE-de-tache-",
       technologies: [<FaReact />, <FaNodeJs />, <FaDatabase />],
-      githubLink: "https://github.com/votre-utilisateur/gestionnaire-de-taches",
-      dateCreated: "2023-01-15",
     },
     {
       id: 2,
-      title: "1re Version Portfolio",
+      title: "Portfolio Personnel",
       description:
-        "Un portfolio moderne et interactif pour présenter vos compétences et projets. Entièrement développé avec React.",
+        "Un portfolio moderne et interactif pour présenter mes compétences et projets. Développé avec React.",
       image: project2Image,
+      githubLink: "https://github.com/nouri50/portfoliov2",
       technologies: [<FaReact />],
-      githubLink: "https://github.com/votre-utilisateur/portfolio",
-      dateCreated: "2022-12-10",
     },
     {
       id: 3,
@@ -41,93 +36,38 @@ const Projects = () => {
       description:
         "Un blog interactif pour publier et commenter des articles. Ce projet est en développement avec React, Node.js et MySQL.",
       image: project3Image,
+      githubLink: null, // Pas de lien GitHub pour ce projet
       technologies: [<FaReact />, <FaNodeJs />, <FaDatabase />],
-      githubLink: null,
-      dateCreated: "2023-03-01",
     },
   ];
 
-  const jsonLD = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": projects.map((project, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "url": project.githubLink || "https://nmoroucheportfolio.fr",
-      "name": project.title,
-      "description": project.description,
-      "dateCreated": project.dateCreated,
-    })),
-  };
-
   return (
-    <section id="projects" className="projects-section">
-      {/* SEO via Helmet */}
-      <Helmet>
-        <title>Projets de Nouri Morouche</title>
-        <meta
-          name="description"
-          content="Découvrez les projets réalisés par Nouri Morouche, développeur web spécialisé en React, Node.js et MySQL."
-        />
-        <script type="application/ld+json">{JSON.stringify(jsonLD)}</script>
-      </Helmet>
-
+    <section id="projects" className="section projects">
       <h2>Mes Projets</h2>
       <div className="projects-container">
         {projects.map((project) => (
           <div key={project.id} className="project-card">
-            {/* Image du projet */}
-            <img
-              src={project.image}
-              alt={`Capture d'écran de ${project.title}`}
-              className="project-image"
-            />
-
-            {/* Titre et description */}
+            <img src={project.image} alt={`Capture d'écran de ${project.title}`} className="project-image" />
             <h3>{project.title}</h3>
-            <p>{project.description}</p>
-
-            {/* Icônes des technologies utilisées */}
-            <div className="technologies-icons">
-              <h4>Technologies utilisées :</h4>
-              <div className="icons">
-                {project.technologies.map((tech, index) => (
-                  <span key={index} className="icon">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Bouton pour afficher/masquer les détails */}
             <button
-              className={`details-button ${
-                activeProject === project.id ? "active" : ""
-              }`}
+              className="details-button"
               onClick={() => toggleDetails(project.id)}
             >
-              {activeProject === project.id ? (
-                <>
-                  Masquer les détails <FaChevronUp />
-                </>
-              ) : (
-                <>
-                  Afficher les détails <FaChevronDown />
-                </>
-              )}
+              {activeProject === project.id ? "Masquer les détails" : "En savoir plus"}
             </button>
-
-            {/* Détails du projet */}
             {activeProject === project.id && (
               <div className="project-details">
                 <p>{project.description}</p>
+                <div className="technologies-icons">
+                  <h4>Technologies utilisées :</h4>
+                  <div className="icons">
+                    {project.technologies.map((tech, idx) => (
+                      <span key={idx}>{tech}</span>
+                    ))}
+                  </div>
+                </div>
                 {project.githubLink ? (
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="github-link"
-                  >
+                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="github-link">
                     <FaGithub /> Voir sur GitHub
                   </a>
                 ) : (

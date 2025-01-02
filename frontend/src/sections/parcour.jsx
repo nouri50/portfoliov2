@@ -1,6 +1,6 @@
 import React from "react";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
-import { SiSymfony, SiMysql, SiTailwindcss, SiPostgresql, SiFigma } from "react-icons/si";
+import { SiSymfony, SiMysql, SiTailwindcss, SiPostgresql, SiFigma, SiGit } from "react-icons/si";
 
 function Parcours() {
   const parcours = [
@@ -24,9 +24,9 @@ function Parcours() {
           description: "Obtention du diplôme à l'AFCI.",
         },
         {
-          header: "Développement d'applications - Afpa Roubaix",
+          header: "Formation - Afpa Roubaix",
           date: "Mars/Avril 2023",
-          description: "Formation spécialisée dans les technologies web et mobile.",
+          description: "Développement d'applications spécialisées en technologies web.",
         },
         {
           header: "Incubateur Nurserie - M2i à distance",
@@ -42,16 +42,17 @@ function Parcours() {
     { name: "CSS3", icon: <FaCss3Alt size={40} color="#1572B6" /> },
     { name: "JavaScript", icon: <FaJs size={40} color="#F7DF1E" /> },
     { name: "React.js", icon: <FaReact size={40} color="#61DAFB" /> },
+    { name: "Node.js", icon: <FaNodeJs size={40} color="#339933" /> },
     { name: "Tailwind CSS", icon: <SiTailwindcss size={40} color="#06B6D4" /> },
     { name: "Symfony", icon: <SiSymfony size={40} color="#000000" /> },
-    { name: "Node.js", icon: <FaNodeJs size={40} color="#339933" /> },
     { name: "MySQL", icon: <SiMysql size={40} color="#00758F" /> },
     { name: "PostgreSQL", icon: <SiPostgresql size={40} color="#336791" /> },
     { name: "Figma", icon: <SiFigma size={40} color="#A259FF" /> },
+    { name: "Git", icon: <SiGit size={40} color="#F05032" /> },
   ];
 
   return (
-    <section id="parcours-tech" className="section parcours-tech">
+    <section id="parcours" className="section parcours">
       <div className="container">
         {/* Bloc Parcours */}
         <div className="card parcours">

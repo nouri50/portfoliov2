@@ -16,7 +16,6 @@ function NotFound() {
           property="og:description"
           content="La page demandée est introuvable. Visitez notre page d'accueil pour découvrir mes projets et services."
         />
-        <meta property="og:url" content="https://nmoroucheportfolio.fr/404" />
       </Helmet>
 
       <div className="not-found">

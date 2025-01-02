@@ -1,74 +1,78 @@
-/* Cookie Banner Styles */
+/* Style de la bannière */
 .cookie-banner {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ffffff;
-  color: #333333;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f8f9fa;
+  color: #333;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  width: 90%;
-  max-width: 500px;
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
+/* Titre de la bannière */
 .cookie-banner h2 {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #007bff;
+  font-weight: bold;
 }
 
+/* Texte de la bannière */
 .cookie-banner p {
-  font-size: 1rem;
-  margin-bottom: 15px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
+/* Lien dans le texte */
+.cookie-link {
+  color: #007bff;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.cookie-link:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+/* Boutons */
 .cookie-buttons {
   display: flex;
   justify-content: center;
   gap: 15px;
 }
 
-.cookie-buttons .accept-button,
-.cookie-buttons .refuse-button {
+.accept-button,
+.refuse-button {
   padding: 10px 20px;
+  font-size: 0.9rem;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.cookie-buttons .accept-button {
+.accept-button {
   background-color: #28a745;
-  color: white;
+  color: #fff;
 }
 
-.cookie-buttons .accept-button:hover {
+.accept-button:hover {
   background-color: #218838;
+  transform: scale(1.05);
 }
 
-.cookie-buttons .refuse-button {
+.refuse-button {
   background-color: #dc3545;
-  color: white;
+  color: #fff;
 }
 
-.cookie-buttons .refuse-button:hover {
+.refuse-button:hover {
   background-color: #c82333;
-}
-
-@media (max-width: 768px) {
-  .cookie-banner {
-    padding: 15px;
-    font-size: 0.9rem;
-  }
-
-  .cookie-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
+  transform: scale(1.05);
 }

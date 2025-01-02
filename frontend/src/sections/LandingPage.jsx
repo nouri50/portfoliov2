@@ -1,7 +1,7 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { FaFileDownload, FaLinkedin, FaGithub, FaFacebook, FaShareAlt } from "react-icons/fa";
-import profileImage from "../image/photo-developpeur.jpg"; // Chemin vers l'image de profil
-
+import profileImage  from '../image/photo-developpeur.jpg';
 function LandingPage() {
   const handleShare = () => {
     if (navigator.share) {
@@ -19,21 +19,21 @@ function LandingPage() {
   };
 
   return (
-    <section id="welcome" className="landing-page">
+    <section id="landing-page" className="landing-page">
+      <Helmet>
+        <title>Bienvenue sur mon portfolio</title>
+        <meta
+          name="description"
+          content="Découvrez mes compétences, mes projets et mon expérience professionnelle."
+        />
+        <link rel="canonical" href="https://nmoroucheportfolio.fr/#landing-page" />
+      </Helmet>
       <div className="landing-content">
-        {/* Image du profil */}
         <img src={profileImage} alt="Nouri Morouche, développeur web" className="landing-image" />
-
-        {/* Titre principal */}
         <h1 className="landing-title">Bienvenue sur mon portfolio</h1>
-
-        {/* Description */}
         <p className="landing-description">
-          Je suis un développeur passionné spécialisé dans la création de solutions digitales modernes et performantes.
-          Découvrez mes compétences, mes projets et mon expérience professionnelle.
+          Je suis un développeur passionné spécialisé dans la création de solutions digitales modernes.
         </p>
-
-        {/* Boutons CTA */}
         <div className="cta-container">
           <a
             href="/assets/Cv de nouri-morouche développeur web et web mobile.pdf"
@@ -46,11 +46,9 @@ function LandingPage() {
             Voir mes projets
           </a>
         </div>
-
-        {/* Boutons sociaux */}
         <div className="social-buttons">
           <a
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/in/nouri-morouche"
             className="social-button linkedin"
             target="_blank"
             rel="noopener noreferrer"
@@ -58,7 +56,7 @@ function LandingPage() {
             <FaLinkedin />
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/nouri50"
             className="social-button github"
             target="_blank"
             rel="noopener noreferrer"
@@ -66,7 +64,7 @@ function LandingPage() {
             <FaGithub />
           </a>
           <a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/profile.php?id=61569434236598"
             className="social-button facebook"
             target="_blank"
             rel="noopener noreferrer"

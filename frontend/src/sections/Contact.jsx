@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -29,6 +30,34 @@ function Contact() {
 
   return (
     <section id="contact" className="section contact fade-in">
+      <Helmet>
+        <title>Contactez Nouri Morouche | Développeur Web</title>
+        <meta
+          name="description"
+          content="Envoyez un message à Nouri Morouche, développeur web. Contactez-moi pour discuter de vos projets et collaborations."
+        />
+        <meta
+          property="og:title"
+          content="Contactez Nouri Morouche | Développeur Web"
+        />
+        <meta
+          property="og:description"
+          content="Envoyez un message à Nouri Morouche, développeur web. Contactez-moi pour discuter de vos projets et collaborations."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://nmoroucheportfolio.fr/contact" />
+        <meta property="og:image" content="/portfolio-contact-thumbnail.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Contactez Nouri Morouche | Développeur Web"
+        />
+        <meta
+          name="twitter:description"
+          content="Envoyez un message à Nouri Morouche, développeur web. Contactez-moi pour discuter de vos projets et collaborations."
+        />
+        <meta name="twitter:image" content="/portfolio-contact-thumbnail.png" />
+      </Helmet>
       <h2 className="section-title">Contactez-moi</h2>
       <form className="contact-form" onSubmit={handleSubmit}>
         <input

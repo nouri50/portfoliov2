@@ -17,7 +17,7 @@ function Footer() {
         <p>© 2024 Nouri Morouche. Tous droits réservés.</p>
         <p>
           <a
-            href="/politique-confidentialite"
+            href="/politique"
             aria-label="Politique de confidentialité"
           >
             Politique de confidentialité
@@ -50,18 +50,7 @@ function Footer() {
             <FaFacebook />
           </a>
         </div>
-        {/* Mention Freepik */}
-        <p className="freepik-credit">
-          Certaines images utilisées sur ce site proviennent de{" "}
-          <a
-            href="https://www.freepik.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Freepik"
-          >
-            Freepik.com
-          </a>
-        </p>
+        
       </div>
     </footer>
   );
