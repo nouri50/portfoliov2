@@ -1,19 +1,26 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // Importation pour la traduction
 import useScrollAnimation from "./hooks/useScrollAnimation";
 import Header from "./components/Header";
-import LandingPage from "./sections/LandingPage.jsx";
-import Parcours from "./sections/parcour.jsx";
-import Services from "./sections/Mes-service.jsx";
+import LanguageSwitcher from "./components/LanguageSwitcher";
+import LandingPage from "./sections/LandingPage";
+import Parcours from "./sections/parcour";
+import Services from "./sections/Mes-service";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
-import PopupBanner from "./utils/CookieBanner.jsx";
-import PrivacyPolicy from "./sections/PrivacyPolicy.jsx"; // Import de la politique de confidentialité
+import PopupBanner from "./utils/CookieBanner";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import NotFound from "./pages/NotFound";
+import CvPage from "./pages/CvPage"; // Ajout de la page CV
+import { initGoogleAnalytics, trackPageView } from "./utils/analytics";
+import "./reset/index.css";
 import "./Styles/global.css";
-import { initGoogleAnalytics, trackPageView } from "./utils/analytics"; // Fichier utils pour Analytics
 
-// Composant pour suivre les changements de route et envoyer les données à Google Analytics
+console.log("Global CSS chargé !");
+
+// 📌 **Gestion des pages vues dans Google Analytics**
 const GoogleAnalyticsTracker = () => {
   const location = useLocation();
 
@@ -26,19 +33,22 @@ const GoogleAnalyticsTracker = () => {
 
 function App() {
   useScrollAnimation();
+  const { t } = useTranslation();
 
   useEffect(() => {
-    initGoogleAnalytics("G-72S8X47T2F"); // Remplacez par votre propre ID de mesure Google Analytics
+    initGoogleAnalytics("G-72S8X47T2F");
   }, []);
 
   return (
     <Router>
-      <GoogleAnalyticsTracker /> {/* Composant pour suivre les changements de pages */}
+      <GoogleAnalyticsTracker />
       <div className="App">
         <PopupBanner />
         <Header />
+        <LanguageSwitcher /> {/* Sélecteur de langue */}
         <main>
           <Routes>
+            {/* ✅ Page d'accueil */}
             <Route
               path="/"
               element={
@@ -61,7 +71,13 @@ function App() {
                 </>
               }
             />
+            
+            {/* ✅ Page du CV en ligne */}
+            <Route path="/cv" element={<CvPage />} />
+            
+            {/* ✅ Pages légales et erreurs */}
             <Route path="/politique" element={<PrivacyPolicy />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

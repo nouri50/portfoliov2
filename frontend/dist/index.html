@@ -34,17 +34,14 @@
     <link rel="manifest" href="/manifest.json" />
 
     <!-- Polices Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
 
     <!-- CSS principal -->
     <link href="/static/css/main.css" rel="stylesheet" />
 
     <!-- Préchargement des ressources critiques -->
     <link rel="preload" href="/static/css/main.css" as="style" />
-   
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="font" type="font/woff2" crossorigin="anonymous" />
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-72S8X47T2F"></script>
@@ -92,7 +89,7 @@
     </script>
     <!-- End Google Tag Manager -->
 
-  </head>
+  <link href="styles.css" rel="stylesheet"></head>
   <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
@@ -101,5 +98,5 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <div id="root"></div>
-  </body>
+  <script defer src="bundle.js"></script></body>
 </html>
