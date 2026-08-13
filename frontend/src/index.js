@@ -1,9 +1,13 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom/client";
+import { HelmetProvider } from "react-helmet-async"; // ✅ Vérifie bien cet import !
 import App from "./App";
-import '../src/components/animations';
 
-
-const container = document.getElementById("root");
-const root = createRoot(container);
-root.render(<App />);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <HelmetProvider> {/* Assure-toi que HelmetProvider englobe l'application */}
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </HelmetProvider>
+);

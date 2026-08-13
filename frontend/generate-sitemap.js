@@ -10,6 +10,8 @@ async function generateSitemap() {
     { url: "/experience", changefreq: "monthly", priority: 0.8 },
     { url: "/presentation", changefreq: "monthly", priority: 0.8 },
     { url: "/politique", changefreq: "yearly", priority: 0.5 },
+    { url: "/404", changefreq: "yearly", priority: 0.1 },
+
   ];
 
   const stream = new SitemapStream({ hostname: "https://nmoroucheportfolio.fr" });

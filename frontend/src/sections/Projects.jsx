@@ -1,105 +1,110 @@
 import React, { useState } from "react";
-import projet1Image from "../image/gestionnaire_des_tache_comp.webp";
-import projet2Image from "../image/portfolio.webp";
-import projet3Image from "../image/work in progress.jpg";
-import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
+import { FaGithub, FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
+import { trackEvent } from "../utils/analytics"; // Suivi Google Analytics
+import project1Image from "../image/gestionnaire_des_tache_comp.webp";
+import project2Image from "../image/portfolio.webp";
+import project3Image from "../image/blog.webp";
 
-function Projects() {
-  const [selectedProject, setSelectedProject] = useState(null);
+const Projects = () => {
+  const [activeProject, setActiveProject] = useState(null);
+
+  const toggleDetails = (projectId) => {
+    setActiveProject(activeProject === projectId ? null : projectId);
+  };
 
   const projects = [
     {
       id: 1,
       title: "Gestionnaire de tâches",
-      description: "Application web pour gérer vos tâches quotidiennes.",
-      technologies: [
-        { name: "React", icon: <FaReact /> },
-        { name: "Node.js", icon: <FaNodeJs /> },
-        { name: "MySQL", icon: <FaDatabase /> },
-      ],
-      image: projet1Image,
+      description: "Une application performante pour organiser vos tâches quotidiennes.",
+      technologies: [<FaReact />, <FaNodeJs />, <FaDatabase />],
+      image: project1Image,
+      githubLink: "https://github.com/nouri50/GESTIONNAIRE-de-tache-"
     },
     {
       id: 2,
-      title: "Portfolio",
-      description: "Site vitrine personnel pour présenter mes compétences.",
-      technologies: [
-        { name: "React", icon: <FaReact /> },
-        { name: "CSS", icon: <FaNodeJs /> },
-        { name: "JavaScript", icon: <FaReact /> },
-      ],
-      image: projet2Image,
+      title: "Portfolio Personnel",
+      description: "Un portfolio moderne et interactif pour présenter mes compétences et projets.",
+      technologies: [<FaReact />],
+      image: project2Image,
+      githubLink: "https://github.com/nouri50/portfoliov2"
     },
     {
       id: 3,
-      title: "Auto-école",
-      description: "Site en cours de développement pour une auto-école en ligne.",
-      technologies: [
-        { name: "React", icon: <FaReact /> },
-        { name: "CSS", icon: <FaNodeJs /> },
-        { name: "MySQL", icon: <FaDatabase /> },
-      ],
-      image: projet3Image,
+      title: "Blog Communautaire",
+      description: "Un blog interactif pour publier et commenter des articles.",
+      technologies: [<FaReact />, <FaNodeJs />, <FaDatabase />],
+      image: project3Image,
+      githubLink: null // Pas encore disponible
     },
   ];
 
-  const openPopup = (project) => {
-    setSelectedProject(project);
-  };
-
-  const closePopup = () => {
-    setSelectedProject(null);
-  };
-
   return (
-    <section id="projects" className="section projects fade-in">
+    <section id="projects" className="section projects">
+      <Helmet>
+        <title>Projets de Nouri Morouche | Développeur Web</title>
+        <meta name="description" content="Découvrez les projets développés par Nouri Morouche, expert en React et Symfony." />
+        
+        {/* JSON-LD pour le référencement SEO des projets */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Projets de Nouri Morouche",
+            "description": "Liste des projets réalisés en React, Symfony et Node.js",
+            "itemListElement": projects.map((project, index) => ({
+              "@type": "CreativeWork",
+              "position": index + 1,
+              "name": project.title,
+              "description": project.description,
+              "url": project.githubLink || "https://nmoroucheportfolio.fr#projects"
+            }))
+          })}
+        </script>
+      </Helmet>
+
       <h2 className="section-title">Mes Projets</h2>
       <div className="projects-container">
         {projects.map((project) => (
-          <div
-            key={project.id}
-            className="project-card"
-            onClick={() => openPopup(project)}
-          >
-            <img src={project.image} alt={project.title} />
+          <div key={project.id} className="project-card">
+            <img src={project.image} alt={`Projet ${project.title}`} className="project-image" />
             <h3>{project.title}</h3>
-            <div className="technologies">
-              {project.technologies.map((tech, index) => (
-                <span key={index}>
-                  {tech.icon} {tech.name}
-                </span>
-              ))}
-            </div>
+            <p>{project.description}</p>
+
+            <button className="details-button" onClick={() => toggleDetails(project.id)}>
+              {activeProject === project.id ? "Masquer les détails" : "Voir les détails"}
+            </button>
+
+            {activeProject === project.id && (
+              <div className="project-details">
+                <h4>Technologies utilisées :</h4>
+                <div className="technologies-icons">
+                  {project.technologies.map((tech, idx) => (
+                    <span key={idx}>{tech}</span>
+                  ))}
+                </div>
+
+                {project.githubLink ? (
+                  <a 
+                    href={project.githubLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="github-link"
+                    onClick={() => trackEvent("click", "Project", project.title)}
+                  >
+                    <FaGithub /> Voir sur GitHub
+                  </a>
+                ) : (
+                  <p className="github-link">Dépôt GitHub à venir</p>
+                )}
+              </div>
+            )}
           </div>
         ))}
       </div>
-      {selectedProject && (
-        <div className="popup-overlay" onClick={closePopup}>
-          <div
-            className="popup-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button className="popup-close" onClick={closePopup}>
-              &times;
-            </button>
-            <img
-              className="popup-image"
-              src={selectedProject.image}
-              alt={selectedProject.title}
-            />
-            <h3>{selectedProject.title}</h3>
-            <p>{selectedProject.description}</p>
-            <h4>Technologies utilisées :</h4>
-            <ul>
-              {selectedProject.technologies.map((tech, index) => (
-                <li key={index}>{tech.name}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
     </section>
   );
-}
+};
 
 export default Projects;
